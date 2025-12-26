@@ -3,6 +3,15 @@ using UnityEngine;
 
 namespace OmbreDiAretua
 {
+    public enum ElementalType
+    {
+        None,
+        Fire,
+        Water,
+        Wind,
+        Rock
+    }
+
     [CreateAssetMenu(menuName = "Data/SpellData",fileName = "SpellData_")]
     public class SpellData : ScriptableObject
     {

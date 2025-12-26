@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4341873768585664379}
   - component: {fileID: 2312614163559572922}
   - component: {fileID: 1048975140676133552}
+  - component: {fileID: 5273918031825675199}
   m_Layer: 8
   m_Name: Spell_Base
   m_TagString: Untagged
@@ -106,6 +107,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5273918031825675199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262019782004240274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9e7887d1864310a685bd04096c56e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMaskToHit:
+    serializedVersion: 2
+    m_Bits: 128
+  ElementalTypeStrong: 0
+  damageAgaintsElementalTypeStrong: 0
 --- !u!1 &5637842132319580996
 GameObject:
   m_ObjectHideFlags: 0

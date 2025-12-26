@@ -77,9 +77,13 @@ namespace OmbreDiAretua
 
         public void Shoot()
         {
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.z = -Camera.main.transform.position.z; // distanza camera → mondo
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mousePos);
             var spellStat = _currentSpell.SpellData.GetSpellStat();
             _currentSpell.SpellController.SetInCooldown(spellStat);
             var instanceSpell = Instantiate(_currentSpell.SpellData.instanceSpell,ShootTransform.transform.position,Quaternion.identity);
+            instanceSpell.GetComponent<SpellBehaviour>().Initialize(spellStat,mouseWorldPos,_currentPlayer.force);
         }
 
         public override void BlockMechanic()
