@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad34d740c80455d90c91a410e9c60b5, type: 3}
+  m_Name: SpellData_Fire
+  m_EditorClassIdentifier: 
+  SpellStats:
+    _serializedList:
+    - Key: 1
+      Value:
+        cooldown: 2
+        damage: 10
+        speed: 10
+        lifetime: 2
+        hasTrapassing: 0
+    - Key: 2
+      Value:
+        cooldown: 1.5
+        damage: 12
+        speed: 12.5
+        lifetime: 2.5
+        hasTrapassing: 0
+    - Key: 3
+      Value:
+        cooldown: 1
+        damage: 15
+        speed: 15
+        lifetime: 3
+        hasTrapassing: 0
+  nameSpell: fire
+  spriteSpell: {fileID: 21300000, guid: a6bdb82905fb1ba4baa75f0e3ea5a27e, type: 3}
+  currentLevel: 1
+  instanceSpell: {fileID: 6591805637147332616, guid: 7ac5dd3fc78d2e740b439aeddf6c299e, type: 3}

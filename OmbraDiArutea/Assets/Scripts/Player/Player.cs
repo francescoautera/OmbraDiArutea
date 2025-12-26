@@ -44,6 +44,21 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void AddHealth(int health)
+    {
+        _playerData.health += health;
+        _playerUi.UpdateHealth(_playerData);
+        if (health <= 0)
+        {
+            _animator.SetBool(animatorDeath,true);
+            foreach (var playerMechanics in _playerMechanicsList)
+            {
+                playerMechanics.BlockMechanic();
+            }
+        }
+        
+    }
+
 }
 
 [Serializable]
