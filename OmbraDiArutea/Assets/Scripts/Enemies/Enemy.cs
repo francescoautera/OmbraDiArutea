@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace OmbreDiAretua
@@ -32,6 +29,20 @@ namespace OmbreDiAretua
         {
             _enemyViewer.Setup(health);
             remainHealth = health;
+        }
+
+        public void Move()
+        {
+            _animator.SetBool(movement,true);
+            _animator.SetBool(hit,false);
+            _animator.SetBool(takeDamage,false);
+        }
+
+        public void Attack()
+        {
+            _animator.SetBool(movement,false);
+            _animator.SetBool(hit,true);
+            _animator.SetBool(takeDamage,false); 
         }
 
         public void TakeDamage(int dmg)
