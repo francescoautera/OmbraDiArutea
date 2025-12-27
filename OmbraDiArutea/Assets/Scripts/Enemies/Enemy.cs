@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace OmbreDiAretua
@@ -6,6 +7,7 @@ namespace OmbreDiAretua
 
     public class Enemy : MonoBehaviour
     {
+        public Action<Enemy> OnDeath;
         public ElementalType ElementalType;
         public int damage;
         public int health;
@@ -57,6 +59,7 @@ namespace OmbreDiAretua
             {
                 _collider2D.enabled = false;
                 _animator.SetBool(death,true);
+                OnDeath?.Invoke(this);
                 return;
             }
         }
