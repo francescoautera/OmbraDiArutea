@@ -8,11 +8,13 @@ namespace OmbreDiAretua
         public Image lifeImage;
         public Transform enemySprite;
         private int currentHealth;
+        private int maxHealth;
         private Transform playerPosition;
         
         public void Setup(int health)
         {
             playerPosition = FindFirstObjectByType<Player>().transform;
+            maxHealth = health;
             currentHealth = health;
             lifeImage.fillAmount = 1;
             if (playerPosition.position.x < transform.position.x)
@@ -42,8 +44,8 @@ namespace OmbreDiAretua
 
         public void ShowDamage(int damage)
         {
-            var remainHealth = currentHealth - damage;
-            lifeImage.fillAmount = remainHealth / (float)currentHealth;
+            currentHealth -= damage;
+            lifeImage.fillAmount = currentHealth / (float)maxHealth;
         }
     }
 }

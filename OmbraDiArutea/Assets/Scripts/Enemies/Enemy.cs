@@ -21,6 +21,7 @@ namespace OmbreDiAretua
         [SerializeField] string takeDamage;
         [SerializeField] string death;
         [SerializeField] string movement;
+        [SerializeField] string hit;
 
         private void Start()
         {
@@ -37,12 +38,20 @@ namespace OmbreDiAretua
         {
             remainHealth  -= dmg;
             _enemyViewer.ShowDamage(dmg);
+            _animator.SetBool(movement,false);
+            _animator.SetBool(hit,false);
+            _animator.SetBool(takeDamage,true);
+
             if (remainHealth < 0)
             {
                 _collider2D.enabled = false;
-                Destroy(gameObject);
+                _animator.SetBool(death,true);
                 return;
             }
         }
+
+        public void OnAfterTakingDamageAnimation() => _animator.SetBool(takeDamage, false);
+        
+        public void OnAfterDeathAnimation() => Destroy(gameObject);
     }
 }
