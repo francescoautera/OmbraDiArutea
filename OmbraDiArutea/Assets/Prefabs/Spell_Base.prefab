@@ -124,6 +124,7 @@ MonoBehaviour:
     m_Bits: 128
   ElementalTypeStrong: 0
   damageAgaintsElementalTypeStrong: 0
+  _damageShowerInstance: {fileID: 2510625256832296637, guid: 4c15b8b6546fb424c926ab66789373a7, type: 3}
 --- !u!1 &5637842132319580996
 GameObject:
   m_ObjectHideFlags: 0
