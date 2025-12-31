@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace OmbreDiAretua
@@ -14,6 +16,7 @@ namespace OmbreDiAretua
         public int speedMovement;
         private int remainHealth;
         [SerializeField] private EnemyViewer _enemyViewer;
+        [SerializeField] private EnemyBrain _enemyBrain;
         [SerializeField] private Collider2D _collider2D;
         [Header("Animator")] 
         [SerializeField] private Animator _animator;
@@ -21,7 +24,10 @@ namespace OmbreDiAretua
         [SerializeField] string death;
         [SerializeField] string movement;
         [SerializeField] string hit;
-
+        
+        [SerializeField] bool isInWaitMode;
+        private float waitTime;
+        
         private void Start()
         {
             Init();
@@ -30,6 +36,10 @@ namespace OmbreDiAretua
         public void Init()
         {
             _enemyViewer.Setup(health);
+            if (_enemyBrain)
+            {
+                _enemyBrain.Init(this);
+            }
             remainHealth = health;
         }
 
@@ -67,5 +77,28 @@ namespace OmbreDiAretua
         public void OnAfterTakingDamageAnimation() => _animator.SetBool(takeDamage, false);
         
         public void OnAfterDeathAnimation() => Destroy(gameObject);
+
+        public bool IsInWaitMode()
+        {
+            return isInWaitMode;
+        }
+
+        public void SetWaitMode(float timerWait)
+        {
+            waitTime = timerWait;
+            isInWaitMode = true;
+            StartCoroutine(Wait());
+            
+            IEnumerator Wait()
+            {
+                yield return new WaitForSeconds(waitTime);
+                isInWaitMode = false;
+
+            }
+
+        }
+
+
     }
+    
 }

@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 8917020029004503762}
   - component: {fileID: 390430572968769388}
   - component: {fileID: 2056586068610691755}
+  - component: {fileID: 7992495492338222672}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -341,8 +342,9 @@ MonoBehaviour:
   ElementalType: 3
   damage: 10
   health: 20
-  speedMovement: 0
+  speedMovement: 2
   _enemyViewer: {fileID: 390430572968769388}
+  _enemyBrain: {fileID: 7992495492338222672}
   _collider2D: {fileID: 7198634638763900317}
   _animator: {fileID: 2056586068610691755}
   takeDamage: Damage
@@ -384,6 +386,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7992495492338222672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863557495522689890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296cac21f05a4c3f80a409e1e6b91507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _states:
+  - actionNode: {fileID: 11400000, guid: 7ffdd39439821d248b13a8ac93084e96, type: 2}
+    _transitions:
+    - ConditionTransition: {fileID: 11400000, guid: 2b12c52f604033749a287382153c82c8, type: 2}
+      actionToArrive: {fileID: 11400000, guid: cb30c189f61719f4093466fedb51d042, type: 2}
+  - actionNode: {fileID: 11400000, guid: cb30c189f61719f4093466fedb51d042, type: 2}
+    _transitions:
+    - ConditionTransition: {fileID: 11400000, guid: a36ffae90420cc0469879eddaca8033d, type: 2}
+      actionToArrive: {fileID: 11400000, guid: 7ffdd39439821d248b13a8ac93084e96, type: 2}
 --- !u!1 &7625838924020884720
 GameObject:
   m_ObjectHideFlags: 0

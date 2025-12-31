@@ -5,6 +5,6 @@ namespace OmbreDiAretua
 
     public abstract class ConditionTransition : ScriptableObject
     {
-        public abstract bool CheckTransition(Enemy enemy);
+        public abstract bool CheckTransition(Enemy enemy,Player player);
     }
 }

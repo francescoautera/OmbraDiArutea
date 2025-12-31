@@ -3,24 +3,15 @@ using UnityEngine;
 
 namespace OmbreDiAretua
 {
-    [CreateAssetMenu(menuName = "Data/ActionNode", fileName = "ActionNode", order = 0)]
-    public class ActionNode : ScriptableObject
+    public abstract class ActionNode : ScriptableObject
     {
-        public EnemyAction currentAction;
-        public List<Transitions> TransitionsList = new List<Transitions>();
+        
+        protected Enemy _enemy;
+        
+        public abstract void Execute(Enemy enemy,Player player);
 
-        public ActionNode TryGetNewNode(Enemy enemy)
-        {
-            foreach (var transitions in TransitionsList)
-            {
-                if (transitions.Check(enemy))
-                {
-                    return transitions.actionToArrive;
-                }
-            }
+        public abstract void Stop();
 
-            return null;
-        }
-
+        public abstract void Tick(Enemy enemy,Player player);
     }
 }
