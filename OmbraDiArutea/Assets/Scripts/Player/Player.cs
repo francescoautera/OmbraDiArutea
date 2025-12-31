@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EasyButtons;
@@ -11,6 +12,11 @@ public class Player : MonoBehaviour
     [SerializeField]  PlayerData _playerData;
     [SerializeField]  List<PlayerMechanics> _playerMechanicsList = new List<PlayerMechanics>();
     [SerializeField]  PlayerUi _playerUi;
+    [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private float timerInvibility;
+    [SerializeField] private Rigidbody2D _rigidbody2D;
+    private bool isInvincibily = false;
+    [SerializeField] private GameObject _invincibilityShield;
     [Header("Animator")] 
     [SerializeField] Animator _animator;
     [SerializeField] string animatorDeath;
@@ -64,17 +70,57 @@ public class Player : MonoBehaviour
     {
         _playerData.health += health;
         _playerUi.UpdateHealth(_playerData);
-        if (health <= 0)
+        if (_playerData.health <= 0)
         {
+            StopAllCoroutines();
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
+            _invincibilityShield.SetActive(false);
             _animator.SetBool(animatorDeath,true);
             foreach (var playerMechanics in _playerMechanicsList)
             {
                 playerMechanics.BlockMechanic();
             }
+            GameGlobalEvents.OnPlayerDeath?.Invoke();
         }
         
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        
+        if (isInvincibily)
+        {
+            return;
+        }
+        Debug.Log("Hitted : " + other.name);
+        
+        if ((enemyMask.value & (1 << other.gameObject.layer)) != 0)
+        {
+            var enemy = other.GetComponent<Enemy>();
+            var damage = Mathf.Clamp(enemy.damage - _playerData.defence,0,_playerData.health);
+            AddHealth(-damage);
+            StartCoroutine(InvincibilyCor());
+        }
+    }
+    private IEnumerator InvincibilyCor()
+    {
+        float t = 0f;
+        _rigidbody2D.bodyType = RigidbodyType2D.Static;
+        _invincibilityShield.SetActive(true);
+        isInvincibily = true;
+        while (t < timerInvibility)
+        {
+            if (_playerData.health <=0)
+            {
+                _invincibilityShield.SetActive(false);
+            }
+            t += Time.deltaTime;
+            yield return null;
+        }
+        _invincibilityShield.SetActive(false);
+        isInvincibily = false;
+        _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+    }
 }
 
 [Serializable]
