@@ -29,6 +29,22 @@ public class Player : MonoBehaviour
         _playerUi.Init(_playerData);
     }
 
+    public void StopAll()
+    {
+        foreach (var playerMechanic in _playerMechanicsList)
+        {
+            playerMechanic.BlockMechanic();
+        } 
+    }
+
+    public void RestartAll()
+    {
+        foreach (var playerMechanic in _playerMechanicsList)
+        {
+            playerMechanic.UnblockMechanic();
+        }
+    }
+
     [Button]
     private void ChangeHealth(int health)
     {

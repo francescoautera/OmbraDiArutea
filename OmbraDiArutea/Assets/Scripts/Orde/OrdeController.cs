@@ -12,12 +12,15 @@ public class OrdeController : MonoBehaviour
 {
     public SerializedDictionary<int, List<Enemy>> ordes = new SerializedDictionary<int, List<Enemy>>();
     public OrdeViewer _Viewer;
+    private PowerUpController _PowerUpController;
     private int currentOrde = 1;
     private List<Enemy> _currentsEnemies = new List<Enemy>();
 
     private void Start()
     {
+        _PowerUpController = FindObjectOfType<PowerUpController>();
         ShowOrde();
+        
     }
 
     public void ShowOrde()
@@ -52,7 +55,7 @@ public class OrdeController : MonoBehaviour
         _currentsEnemies.Remove(enemy);
         if (_currentsEnemies.Count <= 0)
         {
-            ChangeOrde();    
+            _PowerUpController.ShowPowerUp(currentOrde,ChangeOrde);    
         }
     }
 
