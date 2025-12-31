@@ -21,10 +21,7 @@ public class Player : MonoBehaviour
     [SerializeField] Animator _animator;
     [SerializeField] string animatorDeath;
 
-    private void Start()
-    {
-        Init();
-    }
+    
 
     public void Init()
     {

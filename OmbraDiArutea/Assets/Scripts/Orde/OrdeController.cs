@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
@@ -15,12 +15,11 @@ public class OrdeController : MonoBehaviour
     public FeedbackSpawn _FeedbackSpawn;
     private int currentOrde = 1;
     private List<Enemy> _currentsEnemies = new List<Enemy>();
+    public Action OnCompleted;
 
     private void Start()
     {
         _PowerUpController = FindObjectOfType<PowerUpController>();
-        ShowOrde();
-        
     }
 
     public void ShowOrde()
@@ -70,6 +69,7 @@ public class OrdeController : MonoBehaviour
         if (currentOrde > ordes.Count)
         {
             Debug.Log("Fine Orde");
+            OnCompleted?.Invoke();
             return;
         }
         ShowOrde();

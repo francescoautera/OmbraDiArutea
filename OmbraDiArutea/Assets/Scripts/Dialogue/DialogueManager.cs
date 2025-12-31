@@ -1,0 +1,82 @@
+using System;
+using System.Collections;
+using UnityEngine;
+
+namespace CrashDetective
+{
+   public class DialogueManager : MonoBehaviour
+   {
+      public static Action OnStartDialogue;
+      public static Action OnEndDialogue;
+      private DialogueData _currentDialogue;
+      [SerializeField] DialogueViewer _viewer;
+      [SerializeField] private DialogueData _startingDialogue;
+
+
+      public IEnumerator Start()
+      {
+         yield return new WaitForSeconds(2.5f);
+         StartDialogue(_startingDialogue);
+      }
+
+      public void StartDialogue(DialogueData data)
+      {
+         data.OnStartDialogue?.Invoke();
+         _currentDialogue = data;
+         OnStartDialogue?.Invoke();
+         _currentDialogue.OnEndDialogue.RemoveAllListeners();
+         _currentDialogue.OnEndDialogue.AddListener(EndDialogue);
+         var line = _currentDialogue.GetFistLine();
+         _viewer.Setup(line,OnNextRequested);
+      }
+
+      private void OnDestroy()
+      {
+         OnStartDialogue = null;
+         OnEndDialogue = null;
+      }
+
+      private void OnNextRequested()
+      {
+         var line = _currentDialogue.TryGetNextLine();
+         if (line == null)
+         {
+            EndDialogue();
+            return;
+         }
+
+         if (line.isMultichoice)
+         {
+            _viewer.SetupMultichoice(line,OnNextRequested);
+            return;
+         }
+         _viewer.Setup(line,OnNextRequested);
+      }
+
+      private void OnNextRequested(int index)
+      {
+         var line = _currentDialogue.TryGetNextLine(index);
+         if (line == null)
+         {
+            EndDialogue();
+            return;
+         }
+
+         if (line.isMultichoice)
+         {
+            _viewer.SetupMultichoice(line,OnNextRequested);
+            return;
+         }
+         _viewer.Setup(line,OnNextRequested);
+      }
+
+      private void EndDialogue()
+      {
+         _viewer.Close();
+         _currentDialogue?.OnEndDialogue.Invoke();
+         _currentDialogue?.OnEndDialogue.RemoveAllListeners();
+         _currentDialogue = null;
+         OnEndDialogue?.Invoke();
+      }
+   }
+}
