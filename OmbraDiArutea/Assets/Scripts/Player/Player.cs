@@ -87,12 +87,13 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        Debug.Log("Hitted : " + other.name);
+
+            
         if (isInvincibily)
         {
             return;
         }
-        Debug.Log("Hitted : " + other.name);
         
         if ((enemyMask.value & (1 << other.gameObject.layer)) != 0)
         {

@@ -11,7 +11,6 @@ namespace OmbreDiAretua
         public override bool CheckTransition(Enemy enemy,Player player)
         {
             var distanceCurrent = Vector3.Distance(enemy.transform.position, player.transform.position);
-            Debug.Log("DISTANCE " + distanceCurrent);
             if (checkLessThan)
             {
                 return distance > distanceCurrent;

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace OmbreDiAretua
 {
@@ -7,6 +8,7 @@ namespace OmbreDiAretua
         [SerializeField] Transform _PlayerSpriteTransform;
         [SerializeField] float clampVelocity;
         [SerializeField] bool canMove;
+        [SerializeField] private LayerMask blockerMask;
         [Header("Animator")] 
         [SerializeField] Animator _animator;
         [SerializeField] string moving;
@@ -45,6 +47,10 @@ namespace OmbreDiAretua
                 _PlayerSpriteTransform.localScale = new Vector3(value, _PlayerSpriteTransform.localScale.y);
             }
             transform.position += new Vector3(horizontal, vertical);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
         }
     }
 }

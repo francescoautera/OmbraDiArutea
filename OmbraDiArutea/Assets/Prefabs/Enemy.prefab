@@ -135,7 +135,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 16
   m_TargetDisplay: 0
 --- !u!114 &8950573655225261638
 MonoBehaviour:
@@ -232,7 +232,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_Sprite: {fileID: 281911953, guid: 4b7b592c6826e9d43836447ee07b9623, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -351,6 +351,7 @@ MonoBehaviour:
   death: Death
   movement: Movement
   hit: Hit
+  isInWaitMode: 0
 --- !u!114 &390430572968769388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +408,7 @@ MonoBehaviour:
     _transitions:
     - ConditionTransition: {fileID: 11400000, guid: a36ffae90420cc0469879eddaca8033d, type: 2}
       actionToArrive: {fileID: 11400000, guid: 7ffdd39439821d248b13a8ac93084e96, type: 2}
+  _currentActionNode: {fileID: 0}
 --- !u!1 &7625838924020884720
 GameObject:
   m_ObjectHideFlags: 0
