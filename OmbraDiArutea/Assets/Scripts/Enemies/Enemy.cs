@@ -27,6 +27,16 @@ namespace OmbreDiAretua
         
         [SerializeField] bool isInWaitMode;
         private float waitTime;
+        [Header("BurnSection")]
+        [SerializeField] bool isBurned;
+        private float timerToBurn;
+        private float currentTimerBurned;
+        private int fireDamage;
+        [Header("LowerSection")] 
+        [SerializeField] bool isSlowing;
+        private float timerSlow;
+        private float currentTimerSlow;
+        
         
         private void Start()
         {
@@ -74,6 +84,8 @@ namespace OmbreDiAretua
             }
         }
 
+      
+
         public void OnAfterTakingDamageAnimation() => _animator.SetBool(takeDamage, false);
         
         public void OnAfterDeathAnimation() => Destroy(gameObject);
@@ -98,6 +110,62 @@ namespace OmbreDiAretua
 
         }
 
+        public void SetFire(float timerBurned, int fireDamage)
+        {
+            if (isBurned || isSlowing)
+            {
+                return;
+            }
+            _enemyViewer.UpdateFire(true);
+            isBurned = true;
+            currentTimerBurned = 0f;
+            timerToBurn = timerBurned;
+            this.fireDamage = fireDamage;
+            StartCoroutine(FireDamageCor());
+        }
+
+        public void SetSlow(float timerSlow)
+        {
+            if (isBurned || isSlowing)
+            {
+                return;
+            }
+            _enemyViewer.UpdateSlow(true);
+            speedMovement /= 2;
+            isSlowing = true;
+            currentTimerSlow = 0f;
+            this.timerSlow = timerSlow;
+            StartCoroutine(SlowCor());
+        }
+        
+        IEnumerator SlowCor()
+        {
+            while (currentTimerSlow < timerSlow)
+            {
+                yield return new WaitForSeconds(1f);
+                currentTimerSlow += 1;
+            }
+
+            isSlowing = false;
+            speedMovement *= 2;
+            _enemyViewer.UpdateSlow(false);
+
+        }
+
+
+        IEnumerator FireDamageCor()
+        {
+            while (currentTimerBurned < timerToBurn)
+            {
+                yield return new WaitForSeconds(1f);
+                currentTimerBurned += 1;
+                TakeDamage(fireDamage);
+            }
+
+            isBurned = false;
+            _enemyViewer.UpdateFire(false);
+
+        }
 
     }
     

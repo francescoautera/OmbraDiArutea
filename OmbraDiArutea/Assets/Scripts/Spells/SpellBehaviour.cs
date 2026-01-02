@@ -9,6 +9,8 @@ namespace OmbreDiAretua
         protected float lifetime;
         protected int damage;
         protected bool isTrapassing;
+        protected float timeEffect;
+        protected int damageEffectXSeconds;
         [SerializeField] LayerMask _layerMaskToHit;
         public ElementalType ElementalTypeStrong;
         public int damageAgaintsElementalTypeStrong;
@@ -23,6 +25,8 @@ namespace OmbreDiAretua
             lifetime = spellStat.lifetime;
             damage = spellStat.damage;
             isTrapassing = spellStat.hasTrapassing;
+            timeEffect = spellStat.timeEffectApplied;
+            damageEffectXSeconds = spellStat.damageEffectApplied;
             Vector2 direction = (mouseWorldPos - transform.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle);

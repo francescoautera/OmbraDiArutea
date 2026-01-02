@@ -7,6 +7,8 @@ namespace OmbreDiAretua
     {
         public Image lifeImage;
         public Transform enemySprite;
+        public GameObject burnIcon;
+        public GameObject slowIcon;
         private int currentHealth;
         private int maxHealth;
         private Transform playerPosition;
@@ -47,5 +49,9 @@ namespace OmbreDiAretua
             currentHealth -= damage;
             lifeImage.fillAmount = currentHealth / (float)maxHealth;
         }
+
+        public void UpdateFire(bool isActive) => burnIcon.gameObject.SetActive(isActive);
+        
+        public void UpdateSlow(bool isActive) => slowIcon.gameObject.SetActive(isActive);
     }
 }

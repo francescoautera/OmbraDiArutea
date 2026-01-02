@@ -21,6 +21,8 @@ MonoBehaviour:
         speed: 10
         lifetime: 1
         hasTrapassing: 0
+        timeEffectApplied: 2
+        damageEffectApplied: 0
     - Key: 2
       Value:
         cooldown: 5.25
@@ -28,6 +30,8 @@ MonoBehaviour:
         speed: 12.5
         lifetime: 1.25
         hasTrapassing: 0
+        timeEffectApplied: 2.5
+        damageEffectApplied: 0
     - Key: 3
       Value:
         cooldown: 3.5
@@ -35,6 +39,8 @@ MonoBehaviour:
         speed: 15
         lifetime: 1.5
         hasTrapassing: 0
+        timeEffectApplied: 3
+        damageEffectApplied: 0
   nameSpell: rock
   spriteSpell: {fileID: 21300000, guid: 287da8592a89e7544bcdc9bf7ec41cdc, type: 3}
   currentLevel: 1

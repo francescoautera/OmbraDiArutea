@@ -64,7 +64,9 @@ public class SpellStat
     public float speed;
     public float lifetime;
     public bool hasTrapassing;
-    
+    public float timeEffectApplied;
+    public int damageEffectApplied;
+
 }
 
 [Serializable]
