@@ -8,6 +8,7 @@ namespace OmbreDiAretua
 {
     public class PlayerUi : MonoBehaviour
     {
+        [SerializeField] private CanvasGroup panel;
         [SerializeField] Image _playerImage;
         [SerializeField] float timerFill = 0.3f;
         [SerializeField] AnimationCurve _timerCurve;
@@ -65,6 +66,29 @@ namespace OmbreDiAretua
 
             currentHealth = reachHealth;
             _playerImage.fillAmount = reachHealth / (float)maxHealth;
+        }
+
+        public void HideAll()
+        {
+            StartCoroutine(ChangeAlpha(1, 0));
+        }
+
+        IEnumerator ChangeAlpha(float start, float end)
+        {
+            float t = 0f;
+            while (t < 1f)
+            {
+                panel.alpha = Mathf.Lerp(start, end, t);
+                t += Time.deltaTime;
+                yield return null;
+            }
+
+            panel.alpha = end;
+        }
+
+        public void ShowAll()
+        {
+            StartCoroutine(ChangeAlpha(0, 1));
         }
     }
 }

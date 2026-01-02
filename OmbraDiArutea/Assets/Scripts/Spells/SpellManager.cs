@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using EasyButtons;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace OmbreDiAretua
         private bool blockMechanics;
         public List<SpellContainerData> spellContainerDatas = new();
         public Transform ShootTransform;
+        public CanvasGroup panel;
         private SpellContainerData _currentSpell;
 
         public override void Init(PlayerData playerData)
@@ -94,6 +96,29 @@ namespace OmbreDiAretua
         public override void UnblockMechanic()
         {
             blockMechanics = false;
+        }
+
+        public override void HideAllUI()
+        {
+            StartCoroutine(ChangeAlpha(1, 0));
+        }
+
+        public override void ShowAllUI()
+        {
+            StartCoroutine(ChangeAlpha(0, 1));
+        }
+        
+         IEnumerator ChangeAlpha(float start, float end)
+        {
+            float t = 0f;
+            while (t < 1f)
+            {
+                panel.alpha = Mathf.Lerp(start, end, t);
+                t += Time.deltaTime;
+                yield return null;
+            }
+
+            panel.alpha = end;
         }
 
         private void Update()

@@ -15,7 +15,7 @@ namespace CrashDetective
 
       public IEnumerator Start()
       {
-         yield return new WaitForSeconds(2.5f);
+         yield return new WaitForSeconds(1.5f);
          StartDialogue(_startingDialogue);
       }
 

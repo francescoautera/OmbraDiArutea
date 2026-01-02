@@ -28,6 +28,15 @@ namespace OmbreDiAretua
             canMove = true;
         }
 
+        public override void HideAllUI()
+        {
+            
+        }
+
+        public override void ShowAllUI()
+        {
+        }
+
 
         private void Update()
         {

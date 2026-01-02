@@ -25,5 +25,10 @@ namespace OmbreDiAretua
             FindFirstObjectByType<LevelController>().OnCompletedLevel = null;
             isCompleted[obj] = true;
         }
+
+        public bool IsWorldCompleted(string scene)
+        {
+            return isCompleted[scene];
+        }
     }
 }

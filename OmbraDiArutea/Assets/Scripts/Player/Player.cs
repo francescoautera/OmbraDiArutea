@@ -6,41 +6,68 @@ using EasyButtons;
 
 namespace OmbreDiAretua
 {
-    
-public class Player : MonoBehaviour
-{
-    [SerializeField]  PlayerData _playerData;
-    [SerializeField]  List<PlayerMechanics> _playerMechanicsList = new List<PlayerMechanics>();
-    [SerializeField]  PlayerUi _playerUi;
-    [SerializeField] private LayerMask enemyMask;
-    [SerializeField] private float timerInvibility;
-    [SerializeField] private Rigidbody2D _rigidbody2D;
-    private bool isInvincibily = false;
-    [SerializeField] private GameObject _invincibilityShield;
-    [Header("Animator")] 
-    [SerializeField] Animator _animator;
-    [SerializeField] string animatorDeath;
 
-    
-
-    public void Init()
+    public class Player : MonoBehaviour
     {
-        foreach (var playerMechanic in _playerMechanicsList)
+        [SerializeField] PlayerData _playerData;
+        [SerializeField] List<PlayerMechanics> _playerMechanicsList = new List<PlayerMechanics>();
+        [SerializeField] PlayerUi _playerUi;
+        [SerializeField] private LayerMask enemyMask;
+        [SerializeField] private float timerInvibility;
+        [SerializeField] private Rigidbody2D _rigidbody2D;
+        private bool isInvincibily = false;
+        [SerializeField] private GameObject _invincibilityShield;
+        [SerializeField] private bool initAtStart;
+        [Header("Animator")] [SerializeField] Animator _animator;
+        [SerializeField] string animatorDeath;
+
+        private void Start()
         {
-            playerMechanic.Init(_playerData);
+
+            if (initAtStart)
+            {
+                Init();
+            }
         }
-        _playerUi.Init(_playerData);
-    }
 
-    public void StopAll()
-    {
-        foreach (var playerMechanic in _playerMechanicsList)
+        public void Init()
         {
-            playerMechanic.BlockMechanic();
-        } 
-    }
+            foreach (var playerMechanic in _playerMechanicsList)
+            {
+                playerMechanic.Init(_playerData);
+            }
 
-    public void RestartAll()
+            _playerUi.Init(_playerData);
+        }
+
+        public void StopAll()
+        {
+            foreach (var playerMechanic in _playerMechanicsList)
+            {
+                playerMechanic.BlockMechanic();
+            }
+        }
+
+        public void HideAllUI()
+        {
+            foreach (var playerMechanic in _playerMechanicsList)
+            {
+                playerMechanic.HideAllUI();
+            }
+            _playerUi.HideAll();
+        }
+
+        public void ShowAllUI()
+        {
+            foreach (var playerMechanic in _playerMechanicsList)
+            {
+                playerMechanic.ShowAllUI();
+            }
+            
+            _playerUi.ShowAll();
+        }
+
+        public void RestartAll()
     {
         foreach (var playerMechanic in _playerMechanicsList)
         {

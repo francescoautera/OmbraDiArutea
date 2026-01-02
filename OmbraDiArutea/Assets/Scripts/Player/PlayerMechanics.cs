@@ -19,5 +19,10 @@ namespace OmbreDiAretua
         public abstract void BlockMechanic();
 
         public abstract void UnblockMechanic();
+
+
+        public abstract void HideAllUI();
+
+        public abstract void ShowAllUI();
     }
 }
