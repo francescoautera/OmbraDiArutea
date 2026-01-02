@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
@@ -34,6 +35,7 @@ public class OrdeController : MonoBehaviour
         {
             Spawn(enemy);
         }
+        _Viewer.ShowRemainEnemies(list.Count);
     }
     
     public float raggio = 5f;
@@ -59,10 +61,18 @@ public class OrdeController : MonoBehaviour
         _currentsEnemies.Remove(enemy);
         if (_currentsEnemies.Count <= 0)
         {
-            _PowerUpController.ShowPowerUp(currentOrde,ChangeOrde);    
+            _Viewer.CloseShowRemainEnemies();
+            StartCoroutine(Wait());
+            IEnumerator Wait()
+            {
+                yield return new WaitForSeconds(1.2f);
+                _PowerUpController.ShowPowerUp(currentOrde,ChangeOrde);    
+            }
+            return;
         }
+        _Viewer.ShowRemainEnemies(_currentsEnemies.Count);
     }
-
+    
     private void ChangeOrde()
     {
         currentOrde++;

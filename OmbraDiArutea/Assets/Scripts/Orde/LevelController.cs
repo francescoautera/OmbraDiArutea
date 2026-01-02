@@ -1,4 +1,5 @@
 using System;
+using EasyButtons;
 using UnityEngine;
 
 namespace OmbreDiAretua
@@ -11,6 +12,7 @@ namespace OmbreDiAretua
         [SerializeField] OrdeController _ordeController;
         [SerializeField] Player _player;
 
+        [Button]
         public void Setup(bool isCompleted)
         {
             this.isCompleted = isCompleted;
