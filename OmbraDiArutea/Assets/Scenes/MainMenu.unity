@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 107060816}
   - component: {fileID: 107060815}
   - component: {fileID: 107060814}
+  - component: {fileID: 107060817}
   m_Layer: 0
   m_Name: Cpmmands
   m_TagString: Untagged
@@ -390,6 +391,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 107060817}
+        m_TargetAssemblyTypeName: OmbreDiAretua.SfxPlayer, Assembly-CSharp
+        m_MethodName: PlayFx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &107060815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,6 +441,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107060812}
   m_CullTransparentMesh: 1
+--- !u!114 &107060817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107060812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191684a8b0a14aa49a94bda6b7067c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicData:
+    audioClip: {fileID: 8300000, guid: e71b835603de2894e8d7bf1abd77bc33, type: 3}
+    timerFade: 0
+    volume: 0.5
 --- !u!1 &156549567
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +544,7 @@ GameObject:
   - component: {fileID: 270030241}
   - component: {fileID: 270030240}
   - component: {fileID: 270030239}
+  - component: {fileID: 270030242}
   m_Layer: 0
   m_Name: Play
   m_TagString: Untagged
@@ -598,6 +628,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 270030242}
+        m_TargetAssemblyTypeName: OmbreDiAretua.SfxPlayer, Assembly-CSharp
+        m_MethodName: PlayFx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &270030240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,6 +678,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270030237}
   m_CullTransparentMesh: 1
+--- !u!114 &270030242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270030237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191684a8b0a14aa49a94bda6b7067c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicData:
+    audioClip: {fileID: 8300000, guid: e71b835603de2894e8d7bf1abd77bc33, type: 3}
+    timerFade: 0
+    volume: 0.5
 --- !u!1 &344220523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,6 +2311,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainScene: MainFeature
+--- !u!1 &1262287074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1262287075}
+  - component: {fileID: 1262287076}
+  m_Layer: 0
+  m_Name: SoundPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1262287075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262287074}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 259.0939, y: 94.98905, z: 3.5669093}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1262287076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262287074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb54fdffdb8d434fae5844ef49c504d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicData:
+    audioClip: {fileID: 8300000, guid: 99358fcd5bdcbc64c880a123cfa75d78, type: 3}
+    timerFade: 0
+    volume: 0.5
 --- !u!1 &1281783339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2733,6 +2839,7 @@ GameObject:
   - component: {fileID: 1693942579}
   - component: {fileID: 1693942578}
   - component: {fileID: 1693942577}
+  - component: {fileID: 1693942580}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -2816,6 +2923,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1693942580}
+        m_TargetAssemblyTypeName: OmbreDiAretua.SfxPlayer, Assembly-CSharp
+        m_MethodName: PlayFx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1693942578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2854,6 +2973,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693942575}
   m_CullTransparentMesh: 1
+--- !u!114 &1693942580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693942575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191684a8b0a14aa49a94bda6b7067c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicData:
+    audioClip: {fileID: 8300000, guid: 6e876f7ea53d7224981dca08e00d0412, type: 3}
+    timerFade: 0
+    volume: 0.5
 --- !u!1 &1872423937
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,6 +3226,7 @@ GameObject:
   - component: {fileID: 1900559299}
   - component: {fileID: 1900559298}
   - component: {fileID: 1900559297}
+  - component: {fileID: 1900559300}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -3174,6 +3310,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1900559300}
+        m_TargetAssemblyTypeName: OmbreDiAretua.SfxPlayer, Assembly-CSharp
+        m_MethodName: PlayFx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1900559298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3212,6 +3360,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900559295}
   m_CullTransparentMesh: 1
+--- !u!114 &1900559300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900559295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191684a8b0a14aa49a94bda6b7067c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicData:
+    audioClip: {fileID: 8300000, guid: e71b835603de2894e8d7bf1abd77bc33, type: 3}
+    timerFade: 0
+    volume: 0.5
 --- !u!1 &1958692656
 GameObject:
   m_ObjectHideFlags: 0
@@ -3355,3 +3519,4 @@ SceneRoots:
   - {fileID: 1242591072}
   - {fileID: 540649859}
   - {fileID: 1621037503}
+  - {fileID: 1262287075}

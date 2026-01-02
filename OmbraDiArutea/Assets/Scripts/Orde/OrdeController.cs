@@ -17,7 +17,8 @@ public class OrdeController : MonoBehaviour
     private int currentOrde = 1;
     private List<Enemy> _currentsEnemies = new List<Enemy>();
     public Action OnCompleted;
-
+    public Transform enemySpawn;
+    
     private void Start()
     {
         _PowerUpController = FindObjectOfType<PowerUpController>();
@@ -49,6 +50,7 @@ public class OrdeController : MonoBehaviour
         instanceFeedback.Init(() =>
         {
             var enemy = Instantiate(prefab, posizione, Quaternion.identity);
+            enemy.transform.SetParent(enemySpawn);
             enemy.OnDeath += OnDeath;
             _currentsEnemies.Add(enemy);
         });
@@ -66,13 +68,29 @@ public class OrdeController : MonoBehaviour
             IEnumerator Wait()
             {
                 yield return new WaitForSeconds(1.2f);
+                if (TryCheckOrde())
+                {
+                    ChangeOrde();
+                    yield break;
+                }
                 _PowerUpController.ShowPowerUp(currentOrde,ChangeOrde);    
             }
             return;
         }
         _Viewer.ShowRemainEnemies(_currentsEnemies.Count);
     }
-    
+
+    private bool TryCheckOrde()
+    {
+        var nextOrde = currentOrde + 1;
+        if (nextOrde > ordes.Count)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     private void ChangeOrde()
     {
         currentOrde++;

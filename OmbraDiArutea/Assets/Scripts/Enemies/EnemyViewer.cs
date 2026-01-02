@@ -32,6 +32,11 @@ namespace OmbreDiAretua
 
         private void Update()
         {
+            if (playerPosition == null)
+            {
+                return;
+            }
+            
             if (playerPosition.position.x < transform.position.x)
             {
                 enemySprite.localScale = new Vector3(-(Mathf.Abs(enemySprite.localScale.x)), enemySprite.localScale.y,enemySprite.localScale.z);

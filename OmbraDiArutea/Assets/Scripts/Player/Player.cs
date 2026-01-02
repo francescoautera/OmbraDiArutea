@@ -97,6 +97,7 @@ namespace OmbreDiAretua
         if (_playerData.health <= 0)
         {
             StopAllCoroutines();
+            GetComponentInChildren<Collider2D>().enabled = false;
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _invincibilityShield.SetActive(false);
             _animator.SetBool(animatorDeath,true);
@@ -112,7 +113,7 @@ namespace OmbreDiAretua
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Hitted : " + other.name);
-
+        
             
         if (isInvincibily)
         {
@@ -121,6 +122,10 @@ namespace OmbreDiAretua
         
         if ((enemyMask.value & (1 << other.gameObject.layer)) != 0)
         {
+            if (_playerData.health <= 0)
+            {
+                return;
+            }
             var enemy = other.GetComponent<Enemy>();
             var damage = Mathf.Clamp(enemy.damage - _playerData.defence,0,_playerData.health);
             AddHealth(-damage);

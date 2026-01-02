@@ -7,9 +7,14 @@ namespace OmbreDiAretua
     public class CanvasGroupController : MonoBehaviour
     {
         [SerializeField] private CanvasGroup _group;
+        [SerializeField] private bool blockRaycastActive;
     
         public void Show(Action OnEnd)
         {
+            if (blockRaycastActive)
+            {
+                _group.blocksRaycasts = true;
+            }
             StartCoroutine(ChangeAlpha(0, 1,OnEnd));
         }
         
@@ -28,6 +33,7 @@ namespace OmbreDiAretua
 
         public void Close(Action OnEnd)
         {
+            _group.blocksRaycasts = false;
             StartCoroutine(ChangeAlpha(1, 0,OnEnd));
         }
 

@@ -20,6 +20,21 @@ namespace OmbreDiAretua
             });
         }
 
+        public void Reload(string scene)
+        {
+            FindObjectOfType<SceneLoader>().LoadScene(scene,scene, () => { 
+                var levelController = FindFirstObjectByType<LevelController>();
+                levelController.OnCompletedLevel += OnCompleted;
+                levelController.Setup(isCompleted[scene]);
+            });
+        }
+
+
+        public void LoadHub(string scene)
+        {
+            FindObjectOfType<SceneLoader>().LoadScene(hubScene,scene,null);
+        }
+
         private void OnCompleted(string obj)
         {
             FindFirstObjectByType<LevelController>().OnCompletedLevel = null;

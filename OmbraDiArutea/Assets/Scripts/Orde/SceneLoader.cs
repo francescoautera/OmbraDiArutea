@@ -46,6 +46,8 @@ namespace OmbreDiAretua
                     t += Time.deltaTime;
                     yield return null;
                 }
+
+                fadeInitial.alpha = 0;
                 OnEnd?.Invoke();
             }
 

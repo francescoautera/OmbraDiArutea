@@ -797,6 +797,7 @@ GameObject:
   - component: {fileID: 1997812647792843451}
   - component: {fileID: 5400644222155974343}
   - component: {fileID: 2091464930991068906}
+  - component: {fileID: 2826469440487005688}
   m_Layer: 0
   m_Name: PowerUpChoicer
   m_TagString: Untagged
@@ -898,7 +899,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7748517938951126248}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2826469440487005688}
+        m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
+        m_MethodName: CancelInvoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1997812647792843451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,3 +996,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2826469440487005688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8403263331718567002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191684a8b0a14aa49a94bda6b7067c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicData:
+    audioClip: {fileID: 8300000, guid: e71b835603de2894e8d7bf1abd77bc33, type: 3}
+    timerFade: 0
+    volume: 0.5
