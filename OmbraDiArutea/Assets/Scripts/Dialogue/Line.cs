@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-namespace CrashDetective
+namespace OmbreDiAretua
 {
 
     [CreateAssetMenu(menuName = "Dialogue/Line", fileName = "Line", order = 0)]

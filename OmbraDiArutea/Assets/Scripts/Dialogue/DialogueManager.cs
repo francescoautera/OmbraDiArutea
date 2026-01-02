@@ -1,8 +1,7 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
-namespace CrashDetective
+namespace OmbreDiAretua
 {
    public class DialogueManager : MonoBehaviour
    {
@@ -11,13 +10,9 @@ namespace CrashDetective
       private DialogueData _currentDialogue;
       [SerializeField] DialogueViewer _viewer;
       [SerializeField] private DialogueData _startingDialogue;
+      
 
-
-      public IEnumerator Start()
-      {
-         yield return new WaitForSeconds(1.5f);
-         StartDialogue(_startingDialogue);
-      }
+     
 
       public void StartDialogue(DialogueData data)
       {

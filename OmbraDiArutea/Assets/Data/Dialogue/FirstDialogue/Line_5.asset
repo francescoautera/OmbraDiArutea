@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Line_5
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: "Attenzione, c'\xE8 una strana magia sui portali che, una volta attraversati,
-    ti resettano tutte le tue magie"
+  line: Attenzione, i portali hanno una strana magia che, una volta attraversati,
+    ti resettano tutti i tuoi poteri
   nextLines:
   - {fileID: 11400000, guid: f7a453c5c95a92f438941bae9efe149e, type: 2}
   isMultichoice: 0

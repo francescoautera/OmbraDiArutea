@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CrashDetective
+namespace OmbreDiAretua
 {
     public class ButtonMultiChoice : MonoBehaviour
     {

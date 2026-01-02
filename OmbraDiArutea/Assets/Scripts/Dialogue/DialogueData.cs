@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace CrashDetective
+namespace OmbreDiAretua
 {
     public class DialogueData : MonoBehaviour
     {

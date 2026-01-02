@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CrashDetective
+namespace OmbreDiAretua
 {
     [CreateAssetMenu(menuName = "Dialogue/Speaker", fileName = "Speaker", order = 0)]
     public class SpeakerData : ScriptableObject

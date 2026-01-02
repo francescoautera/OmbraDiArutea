@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Line_4
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: Vedi i 4 ponti? attraversali, sconfiggi i nemici e recupera le chiavi per
-    accedere al mondo di aretua
+  line: Vedi i 4 portali? attraversali, sconfiggi i nemici e recupera le chiavi per
+    accedere al mondo di Aretua
   nextLines:
   - {fileID: 11400000, guid: 8354f652cf1d99047852308931aef61f, type: 2}
   isMultichoice: 0
