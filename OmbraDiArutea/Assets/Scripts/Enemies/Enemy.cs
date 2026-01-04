@@ -40,8 +40,17 @@ namespace OmbreDiAretua
         
         private IEnumerator Start()
         {
+            GameGlobalEvents.OnPlayerDeath += OnPlayerDeath;
             yield return new WaitForSeconds(0.5f);
             Init();
+        }
+
+        private void OnPlayerDeath()
+        {
+            if (_enemyBrain)
+            {
+                _enemyBrain.Lock();
+            }
         }
 
         public void Init()
@@ -166,6 +175,20 @@ namespace OmbreDiAretua
             isBurned = false;
             _enemyViewer.UpdateFire(false);
 
+        }
+
+        private Vector3 positionToCheck = Vector3.negativeInfinity;
+
+        public void SetPositionToCheck(Vector3 vector3) => positionToCheck = vector3;
+
+        public float GetPositionToCheckDistance()
+        {
+            if (positionToCheck == Vector3.negativeInfinity)
+            {
+                return -1;
+            }
+            
+            return  Vector3.Distance(transform.position, positionToCheck);
         }
 
     }

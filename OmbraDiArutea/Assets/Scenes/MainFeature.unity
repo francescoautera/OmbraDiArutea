@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _group: {fileID: 2074218641}
+  blockRaycastActive: 0
 --- !u!1 &581289617
 GameObject:
   m_ObjectHideFlags: 0

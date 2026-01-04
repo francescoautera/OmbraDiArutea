@@ -102,5 +102,13 @@ public class OrdeController : MonoBehaviour
         }
         ShowOrde();
     }
+
+    public void AddEnemy(Enemy enemy)
+    {
+        enemy.transform.SetParent(enemySpawn);
+        _currentsEnemies.Add(enemy);
+        enemy.OnDeath += OnDeath;
+        _Viewer.ShowRemainEnemies(_currentsEnemies.Count);
+    }
 }
 }

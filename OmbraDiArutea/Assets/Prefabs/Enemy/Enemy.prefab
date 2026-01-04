@@ -271,7 +271,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 281911953, guid: 4b7b592c6826e9d43836447ee07b9623, type: 3}
+  m_Sprite: {fileID: 1039244097, guid: b2215e104c09aff49bfd8097fec80461, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 209de9695a850b94190b4f6f19277d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ElementalType: 3
+  ElementalType: 4
   damage: 10
   health: 20
   speedMovement: 2
@@ -501,6 +501,8 @@ MonoBehaviour:
   movement: Movement
   hit: Hit
   isInWaitMode: 0
+  isBurned: 0
+  isSlowing: 0
 --- !u!114 &390430572968769388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,7 +529,7 @@ Animator:
   m_GameObject: {fileID: 6863557495522689890}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6cf9f5571468d4e4cb4866a03803bd1b, type: 2}
+  m_Controller: {fileID: 22100000, guid: 0bf9204e0310d89448edd4afa7e40a99, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

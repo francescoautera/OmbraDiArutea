@@ -90,7 +90,7 @@ namespace OmbreDiAretua
         }
     }
 
-    private void AddHealth(int health)
+    public void AddHealth(int health)
     {
         _playerData.health += health;
         _playerUi.UpdateHealth(_playerData);
