@@ -6,8 +6,16 @@ namespace OmbreDiAretua
     {
         
         [SerializeField] private string nameScene;
+        [SerializeField] bool isLock;
+        [SerializeField] DialogueData _blockTeleport;
+            
         public override void Execute()
         {
+            if (isLock)
+            {
+                _blockTeleport.RequestStartDialogue();
+                return;
+            }
             var player = FindFirstObjectByType<Player>();
             player.HideAllUI();
             player.StopAll();
@@ -18,5 +26,7 @@ namespace OmbreDiAretua
         {
         
         }
+
+        public void Unlock() => isLock = false;
     }
 }

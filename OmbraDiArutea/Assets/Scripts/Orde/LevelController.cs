@@ -27,5 +27,6 @@ namespace OmbreDiAretua
             FindFirstObjectByType<Player>().StopAll();
             FindFirstObjectByType<WinController>().ShowWin();
         }
+        
     }
 }

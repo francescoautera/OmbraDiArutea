@@ -34,11 +34,13 @@ namespace OmbreDiAretua
 
         public void Retry()
         {
+           FindFirstObjectByType<SpellManager>().ResetAllLevels(); 
            FindObjectOfType<LevelManager>().Reload(sceneToLoad); 
         }
 
         public void LoadHub()
         {
+            FindFirstObjectByType<SpellManager>().ResetAllLevels(); 
             FindObjectOfType<LevelManager>().LoadHub(sceneToLoad); 
 
         }

@@ -116,7 +116,7 @@ namespace OmbreDiAretua
             float t = 0f;
             while (t < 1f)
             {
-                panel.alpha = Mathf.Lerp(start, end, t);
+                panel.alpha = Mathf.Lerp(start, end, t/1f);
                 t += Time.deltaTime;
                 yield return null;
             }
