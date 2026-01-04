@@ -77,6 +77,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1472540451010846728}
   m_SourcePrefab: {fileID: 100100000, guid: 561433442b0fd824b8161d0ae8598bfa, type: 3}
+--- !u!114 &1014287400491465155 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6254185774470383193, guid: 561433442b0fd824b8161d0ae8598bfa, type: 3}
+  m_PrefabInstance: {fileID: 6401917272434769818}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6591805637147332616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32a7ec3f9eec934a9b613b9f8644d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6591805637147332616 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 262019782004240274, guid: 561433442b0fd824b8161d0ae8598bfa, type: 3}
@@ -100,3 +111,4 @@ MonoBehaviour:
   ElementalTypeStrong: 3
   damageAgaintsElementalTypeStrong: 5
   _damageShowerInstance: {fileID: 2510625256832296637, guid: 4c15b8b6546fb424c926ab66789373a7, type: 3}
+  _soundHitted: {fileID: 1014287400491465155}

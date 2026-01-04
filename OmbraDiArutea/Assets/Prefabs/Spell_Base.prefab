@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2312614163559572922}
   - component: {fileID: 1048975140676133552}
   - component: {fileID: 5273918031825675199}
+  - component: {fileID: 6254185774470383193}
   m_Layer: 8
   m_Name: Spell_Base
   m_TagString: Untagged
@@ -125,6 +126,23 @@ MonoBehaviour:
   ElementalTypeStrong: 0
   damageAgaintsElementalTypeStrong: 0
   _damageShowerInstance: {fileID: 2510625256832296637, guid: 4c15b8b6546fb424c926ab66789373a7, type: 3}
+  _soundHitted: {fileID: 6254185774470383193}
+--- !u!114 &6254185774470383193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262019782004240274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32a7ec3f9eec934a9b613b9f8644d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicData:
+    audioClip: {fileID: 8300000, guid: 20e6c1080fc380e4fbe30ea4ce11c614, type: 3}
+    timerFade: 0
+    volume: 0.5
 --- !u!1 &5637842132319580996
 GameObject:
   m_ObjectHideFlags: 0

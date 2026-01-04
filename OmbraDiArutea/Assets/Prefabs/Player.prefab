@@ -966,6 +966,7 @@ GameObject:
   - component: {fileID: 7654054708557387668}
   - component: {fileID: 6051836979281281020}
   - component: {fileID: 244418506118576665}
+  - component: {fileID: 3085556871059945865}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -1090,6 +1091,7 @@ MonoBehaviour:
     m_Bits: 0
   _animator: {fileID: 5157334276016308830}
   moving: move
+  _soundWalking: {fileID: 3085556871059945865}
 --- !u!58 &6051836979281281020
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1152,6 +1154,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3085556871059945865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667658697628960177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32a7ec3f9eec934a9b613b9f8644d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicData:
+    audioClip: {fileID: 8300000, guid: 94daa45e33aedaf4781d83437be84916, type: 3}
+    timerFade: 0
+    volume: 0.5
 --- !u!1 &2147168744638119586
 GameObject:
   m_ObjectHideFlags: 0
@@ -4392,6 +4410,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5419339509131615432}
   - component: {fileID: 8623638114731013908}
+  - component: {fileID: 4438228895583127762}
+  - component: {fileID: 2101922053215353455}
   m_Layer: 6
   m_Name: ShootPlayer
   m_TagString: Untagged
@@ -4445,6 +4465,40 @@ MonoBehaviour:
     SpellController: {fileID: 8685830798818881204}
   ShootTransform: {fileID: 5419339509131615432}
   panel: {fileID: 1228519452451139547}
+  _shoot: {fileID: 4438228895583127762}
+  reloading: {fileID: 2101922053215353455}
+--- !u!114 &4438228895583127762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8116063777913927956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32a7ec3f9eec934a9b613b9f8644d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicData:
+    audioClip: {fileID: 8300000, guid: e6637e1d84f743f418317d293b273472, type: 3}
+    timerFade: 0
+    volume: 0.5
+--- !u!114 &2101922053215353455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8116063777913927956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32a7ec3f9eec934a9b613b9f8644d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicData:
+    audioClip: {fileID: 8300000, guid: c165cfb9b35db244598c18bfe2e06450, type: 3}
+    timerFade: 0
+    volume: 0.5
 --- !u!1 &8302907353611729023
 GameObject:
   m_ObjectHideFlags: 0

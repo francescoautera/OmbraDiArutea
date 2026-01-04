@@ -13,7 +13,9 @@ namespace OmbreDiAretua
         public Transform ShootTransform;
         public CanvasGroup panel;
         private SpellContainerData _currentSpell;
-
+        [Header("Spell")] 
+        [SerializeField] private SfxPlayer _shoot;
+        [SerializeField] private SfxPlayer reloading;    
         public override void Init(PlayerData playerData)
         {
             base.Init(playerData);
@@ -86,6 +88,7 @@ namespace OmbreDiAretua
             _currentSpell.SpellController.SetInCooldown(spellStat);
             var instanceSpell = Instantiate(_currentSpell.SpellData.instanceSpell,ShootTransform.transform.position,Quaternion.identity);
             instanceSpell.GetComponent<SpellBehaviour>().Initialize(spellStat,mouseWorldPos,_currentPlayer.force);
+            _shoot.PlayFx();
         }
 
         public override void BlockMechanic()
@@ -132,8 +135,10 @@ namespace OmbreDiAretua
             {
                 if (_currentSpell.SpellController.IsInCooldown)
                 {
+                    reloading.PlayFx();
                     return;
                 }
+                
                 Shoot();
             }
         }

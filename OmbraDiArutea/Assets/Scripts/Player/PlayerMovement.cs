@@ -12,6 +12,8 @@ namespace OmbreDiAretua
         [Header("Animator")] 
         [SerializeField] Animator _animator;
         [SerializeField] string moving;
+        [Header("Music")] 
+        [SerializeField] private SfxPlayer _soundWalking;
         public override void Init(PlayerData playerData)
         {
             base.Init(playerData);
@@ -55,8 +57,7 @@ namespace OmbreDiAretua
                 var value = Mathf.Abs( _PlayerSpriteTransform.localScale.x ) * Mathf.Sign(sizeX);
                 _PlayerSpriteTransform.localScale = new Vector3(value, _PlayerSpriteTransform.localScale.y);
             }
-            transform.position += new Vector3(horizontal, vertical);
-        }
+            transform.position += new Vector3(horizontal, vertical); }
 
         private void OnTriggerEnter2D(Collider2D other)
         {

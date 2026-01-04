@@ -15,6 +15,7 @@ namespace OmbreDiAretua
         public ElementalType ElementalTypeStrong;
         public int damageAgaintsElementalTypeStrong;
         [SerializeField] private DamageShower _damageShowerInstance;
+        [SerializeField] private SfxPlayer _soundHitted;
         private float timeInLife;
         private int _playerDamage;
 
@@ -68,7 +69,7 @@ namespace OmbreDiAretua
             {
                 return;
             }
-
+            _soundHitted.PlayFx();
             if (ElementalTypeStrong == enemy.ElementalType)
             {
                 damage += damageAgaintsElementalTypeStrong;

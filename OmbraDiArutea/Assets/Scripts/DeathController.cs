@@ -11,6 +11,7 @@ namespace OmbreDiAretua
     {
         public string sceneToLoad;
         public CanvasGroupController _CanvasGroupController;
+        public SfxPlayer _deathFanfare; 
 
         private void Start()
         {
@@ -24,7 +25,10 @@ namespace OmbreDiAretua
 
         private void OnPlayerDeath()
         {
-            _CanvasGroupController.Show(null);
+            _CanvasGroupController.Show((() =>
+            {
+                    _deathFanfare.PlayFx();
+            }));
         }
 
 

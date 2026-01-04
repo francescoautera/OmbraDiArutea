@@ -10,6 +10,7 @@ public class WinController : MonoBehaviour
     [SerializeField] private string sceneName;
     [SerializeField] CanvasGroupController _canvasGroupController;
     [SerializeField] private Animator _animator;
+    [SerializeField] private SfxPlayer _winSfx;
 
     public void ShowWin()
     {
@@ -18,6 +19,7 @@ public class WinController : MonoBehaviour
 
     private void StartAnimation()
     {
+        _winSfx.PlayFx();
         _animator.enabled = true;
     }
 
