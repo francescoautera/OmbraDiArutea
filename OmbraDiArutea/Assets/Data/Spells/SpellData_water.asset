@@ -18,23 +18,29 @@ MonoBehaviour:
       Value:
         cooldown: 10
         damage: 20
-        speed: 3
+        speed: 6
         lifetime: 8
         hasTrapassing: 0
+        timeEffectApplied: 0
+        damageEffectApplied: 0
     - Key: 2
       Value:
         cooldown: 7.5
         damage: 22
-        speed: 3.75
+        speed: 7.5
         lifetime: 10
         hasTrapassing: 0
+        timeEffectApplied: 0
+        damageEffectApplied: 0
     - Key: 3
       Value:
         cooldown: 5
         damage: 24
-        speed: 4.5
+        speed: 9
         lifetime: 12
         hasTrapassing: 0
+        timeEffectApplied: 0
+        damageEffectApplied: 0
   nameSpell: water
   spriteSpell: {fileID: 21300000, guid: e878f0cafae61c0409318f5b2cb6d960, type: 3}
   currentLevel: 1

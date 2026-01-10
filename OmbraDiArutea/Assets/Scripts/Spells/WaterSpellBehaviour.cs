@@ -9,7 +9,11 @@ namespace OmbreDiAretua
         
         public override void Execute(GameObject gameObject)
         {
-            base.Execute(gameObject);
+            if (gameObject.GetComponent<Enemy>())
+            {
+                var explosion = Instantiate(_explosionSpell, gameObject.transform.position, Quaternion.identity);
+                explosion.Init(_playerDamage,damage);
+            }
         }
     }
 }

@@ -17,7 +17,7 @@ namespace OmbreDiAretua
         [SerializeField] private DamageShower _damageShowerInstance;
         [SerializeField] private SfxPlayer _soundHitted;
         private float timeInLife;
-        private int _playerDamage;
+        protected int _playerDamage;
 
         public void Initialize(SpellStat spellStat,Vector3 mouseWorldPos,int playerDamage)
         {

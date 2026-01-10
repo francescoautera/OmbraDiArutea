@@ -103,6 +103,7 @@ namespace OmbreDiAretua
 
         public override void HideAllUI()
         {
+            
             StartCoroutine(ChangeAlpha(1, 0));
         }
 

@@ -18,23 +18,29 @@ MonoBehaviour:
       Value:
         cooldown: 5
         damage: 7
-        speed: 5
+        speed: 6
         lifetime: 5
         hasTrapassing: 1
+        timeEffectApplied: 0
+        damageEffectApplied: 0
     - Key: 2
       Value:
         cooldown: 3.75
         damage: 9
-        speed: 6.25
+        speed: 7.5
         lifetime: 6.25
         hasTrapassing: 1
+        timeEffectApplied: 0
+        damageEffectApplied: 0
     - Key: 3
       Value:
         cooldown: 2.5
         damage: 11
-        speed: 7.5
+        speed: 9
         lifetime: 7.5
         hasTrapassing: 1
+        timeEffectApplied: 0
+        damageEffectApplied: 0
   nameSpell: wind
   spriteSpell: {fileID: 21300000, guid: cf6d72172d0b4a14d925483b734c10e4, type: 3}
   currentLevel: 1

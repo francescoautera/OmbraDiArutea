@@ -2,45 +2,78 @@
 
 namespace OmbreDiAretua
 {
+    using UnityEngine;
+
     public class ExplosionSpell : MonoBehaviour
     {
+        [Header("Explosion")]
+        [SerializeField] float explosionRadius = 2.5f;
+        [SerializeField] LayerMask enemyLayer;
+
+        [Header("Damage")]
         [SerializeField] int damageAgaintsElementalTypeStrong;
         [SerializeField] ElementalType _elementalType;
+
+        [Header("Feedback")]
         [SerializeField] SfxPlayer _soundHitted;
         [SerializeField] DamageShower _damageShower;
-        private int damage;
+
+        private int _spellDamage;
         private int _playerDamage;
 
-        public void Init(int playerDamage,int spellDamage)
+        public void Init(int playerDamage, int spellDamage)
         {
-            damage = spellDamage;
+            _spellDamage = spellDamage;
             _playerDamage = playerDamage;
-        }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.GetComponent<Enemy>())
-            {
-                Execute(other.gameObject);
-            }
+            Explode();
         }
         
-        public void Execute(GameObject gameObject)
+
+        private void Explode()
         {
-            var enemy = gameObject.GetComponent<Enemy>();
-            if (!enemy)
-            {
-                return;
-            }
             _soundHitted.PlayFx();
-            if (_elementalType == enemy.ElementalType)
+
+            Collider2D[] hits = Physics2D.OverlapCircleAll(
+                transform.position,
+                explosionRadius,
+                enemyLayer
+            );
+
+            foreach (var hit in hits)
             {
-                damage += damageAgaintsElementalTypeStrong;
+                Enemy enemy = hit.GetComponent<Enemy>();
+                if (!enemy) continue;
+
+                int finalDamage = _spellDamage + _playerDamage;
+
+                if (_elementalType == enemy.ElementalType)
+                {
+                    finalDamage += damageAgaintsElementalTypeStrong;
+                }
+
+                enemy.TakeDamage(finalDamage);
+
+                var damageShower = Instantiate(
+                    _damageShower,
+                    enemy.transform.position,
+                    Quaternion.identity
+                );
+                damageShower.ShowDamage(finalDamage);
             }
-            damage += _playerDamage;
-            enemy.TakeDamage(damage);
-            var damagerShower = Instantiate(_damageShower, enemy.transform.position, Quaternion.identity);
-            damagerShower.ShowDamage(damage);
         }
+
+        public void OnAnimationFinished()
+        {
+            Destroy(gameObject);
+        }
+
+#if UNITY_EDITOR
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, explosionRadius);
+        }
+#endif
     }
+
 }

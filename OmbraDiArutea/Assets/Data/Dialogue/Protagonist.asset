@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Protagonist
   m_EditorClassIdentifier: 
   nameSpeaker: Hero
-  speakerSprite: {fileID: 21300000, guid: 48ecb969d976e7b4ba60c754541c6b1d, type: 3}
+  speakerSprite: {fileID: 21300000, guid: efce7339eb1dfe041a8b28b027108705, type: 3}
