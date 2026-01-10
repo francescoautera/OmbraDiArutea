@@ -15,6 +15,7 @@ MonoBehaviour:
   _enemiesToInstance:
   - {fileID: 8917020029004503762, guid: 195f3b3fb40161449b748c27acab4e45, type: 3}
   - {fileID: 8917020029004503762, guid: fed56f3f572ecba45aa2854c6c2a6195, type: 3}
+  - {fileID: 8917020029004503762, guid: 629b4e600a94de441a62ec1acf419454, type: 3}
   numberToInstance: 2
   feedbackSpawn: {fileID: 8752069844924720785, guid: 2c0ba24d21c42ae43898f76963e432f5, type: 3}
   raggio: 5

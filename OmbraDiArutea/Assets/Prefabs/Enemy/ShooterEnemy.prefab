@@ -568,11 +568,7 @@ MonoBehaviour:
   - actionNode: {fileID: 11400000, guid: 4c1a8fced56e5884b8c760c66567468e, type: 2}
     _transitions:
     - ConditionTransition: {fileID: 11400000, guid: 7ac59267c754fc844b4d9751f68795ee, type: 2}
-      actionToArrive: {fileID: 11400000, guid: cb30c189f61719f4093466fedb51d042, type: 2}
-    - ConditionTransition: {fileID: 11400000, guid: bf242ac01374c734c9741eefec27ad4e, type: 2}
-      actionToArrive: {fileID: 11400000, guid: a908c13275b4f7f4e9fe44def7c0429f, type: 2}
-    - ConditionTransition: {fileID: 11400000, guid: 6304841471db5dc4db1cba82c56c2a4a, type: 2}
-      actionToArrive: {fileID: 11400000, guid: 7ffdd39439821d248b13a8ac93084e96, type: 2}
+      actionToArrive: {fileID: 11400000, guid: e9b3d0f1e7ef3d54d8872e77752edebe, type: 2}
   - actionNode: {fileID: 11400000, guid: e9b3d0f1e7ef3d54d8872e77752edebe, type: 2}
     _transitions:
     - ConditionTransition: {fileID: 11400000, guid: a36ffae90420cc0469879eddaca8033d, type: 2}
