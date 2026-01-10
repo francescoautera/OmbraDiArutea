@@ -11,6 +11,10 @@ namespace OmbreDiAretua
         
         public override void Execute(Enemy enemy, Player player)
         {
+            if (player == null)
+            {
+                player = FindFirstObjectByType<Player>();
+            }
             Instantiate(obstacle, enemy.transform.position, Quaternion.identity);
             obstacle.GetComponent<ChaserObstacle>().Init(player);
         }

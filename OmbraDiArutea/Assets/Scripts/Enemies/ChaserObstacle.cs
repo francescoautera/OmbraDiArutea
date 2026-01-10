@@ -7,19 +7,15 @@ namespace OmbreDiAretua
         public float lifeTime;
         public int damage;
         public float speed;
-        private Player _player;
-        private float currentLifeTime;
+        [SerializeField] private DamageShower _damageShower;
+        Player _player;
+        float currentLifeTime;
         
         public void Init(Player position)
         {
             _player = position;
-            Vector2 direction = (position.transform.position - transform.position).normalized;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle);
-
-            // Movimento
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            rb.velocity = direction * speed;
+            Vector3 dir = (_player.transform.position - transform.position).normalized;
+            transform.position += dir * (speed * Time.deltaTime);
         }
 
 
@@ -27,6 +23,7 @@ namespace OmbreDiAretua
         {
             if (_player == null)
             {
+                _player = FindFirstObjectByType<Player>();
                 return;
             }
 
@@ -36,13 +33,9 @@ namespace OmbreDiAretua
                 Destroy(gameObject);
                 return;
             }
-            Vector2 direction = (_player.transform.position - transform.position).normalized;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle);
-
-            // Movimento
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            rb.velocity = direction * speed;
+            
+            Vector3 dir = (_player.transform.position - transform.position).normalized;
+            transform.position += dir * (speed * Time.deltaTime);
             
         }
 
@@ -51,6 +44,8 @@ namespace OmbreDiAretua
             var player = other.gameObject.GetComponent<Player>();
             if (player)
             {
+                var showerDamage = Instantiate(_damageShower, player.transform.position, Quaternion.identity);
+                showerDamage.ShowDamage(damage);
                 player.AddHealth(-damage);
                 Destroy(gameObject);
             }

@@ -225,7 +225,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 1}
+  m_LocalScale: {x: 12, y: 12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7410747288956622810}
@@ -271,7 +271,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: -1549095195, guid: ec821e4e0fb22184697fa176783a1b45, type: 3}
+  m_Sprite: {fileID: -1852294991, guid: ded0886f34c80ac48ade1173d2c3b635, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 209de9695a850b94190b4f6f19277d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ElementalType: 1
+  ElementalType: 3
   damage: 10
   health: 20
   speedMovement: 2
@@ -529,7 +529,7 @@ Animator:
   m_GameObject: {fileID: 6863557495522689890}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: d9b87ed329a6f7041b88182517f3c25b, type: 2}
+  m_Controller: {fileID: 22100000, guid: 534466d4acc85e34ea500ce9477e5289, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -553,18 +553,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _states:
-  - actionNode: {fileID: 11400000, guid: a908c13275b4f7f4e9fe44def7c0429f, type: 2}
+  - actionNode: {fileID: 11400000, guid: c17ad3197c772d84eb97122b720de212, type: 2}
     _transitions:
-    - ConditionTransition: {fileID: 11400000, guid: 2c9a6b9bbcebb244abb8b124f114c72c, type: 2}
-      actionToArrive: {fileID: 11400000, guid: 52370d3e8fa12f04f8d4fbb732c87f48, type: 2}
-  - actionNode: {fileID: 11400000, guid: 52370d3e8fa12f04f8d4fbb732c87f48, type: 2}
+    - ConditionTransition: {fileID: 11400000, guid: a1803c6eb5cd48f4ab758e7e2366ea3c, type: 2}
+      actionToArrive: {fileID: 11400000, guid: 766a032d37f17284fb8b18dde071e7f4, type: 2}
+  - actionNode: {fileID: 11400000, guid: 766a032d37f17284fb8b18dde071e7f4, type: 2}
     _transitions:
     - ConditionTransition: {fileID: 11400000, guid: 7ac59267c754fc844b4d9751f68795ee, type: 2}
-      actionToArrive: {fileID: 11400000, guid: fd0874f0ead2fe04f9708a4493f019ad, type: 2}
-  - actionNode: {fileID: 11400000, guid: fd0874f0ead2fe04f9708a4493f019ad, type: 2}
+      actionToArrive: {fileID: 11400000, guid: 146a8f4776e8c4c4385594f9e57cc484, type: 2}
+  - actionNode: {fileID: 11400000, guid: 146a8f4776e8c4c4385594f9e57cc484, type: 2}
     _transitions:
     - ConditionTransition: {fileID: 11400000, guid: a36ffae90420cc0469879eddaca8033d, type: 2}
-      actionToArrive: {fileID: 11400000, guid: a908c13275b4f7f4e9fe44def7c0429f, type: 2}
+      actionToArrive: {fileID: 11400000, guid: c17ad3197c772d84eb97122b720de212, type: 2}
   _currentActionNode: {fileID: 0}
 --- !u!1 &7625838924020884720
 GameObject:

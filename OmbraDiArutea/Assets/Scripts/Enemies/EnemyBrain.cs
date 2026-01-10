@@ -25,7 +25,7 @@ namespace OmbreDiAretua
 
         private void Update()
         {
-            if(!isUnlock && _currentEnemy == null && _currentActionNode == null && _player == null && _currentState == null)
+            if(!isUnlock || _currentEnemy == null || _currentActionNode == null || _player == null || _currentState == null)
                 return;
             
             _currentActionNode.Tick(_currentEnemy,_player);

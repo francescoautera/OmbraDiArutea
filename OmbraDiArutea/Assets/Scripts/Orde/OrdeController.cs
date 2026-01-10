@@ -73,6 +73,12 @@ public class OrdeController : MonoBehaviour
                     ChangeOrde();
                     yield break;
                 }
+
+                var obstacles = FindObjectsOfType<ChaserObstacle>();
+                foreach (var chaserObstacle in obstacles)
+                {
+                    Destroy(chaserObstacle.gameObject);
+                }
                 _PowerUpController.ShowPowerUp(currentOrde,ChangeOrde);    
             }
             return;
