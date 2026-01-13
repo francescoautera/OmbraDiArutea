@@ -2,9 +2,6 @@
 
 namespace OmbreDiAretua
 {
-    
-    [CreateAssetMenu(menuName = "Data/ActionNode/Escape", fileName = "EscapeActionNode", order = 0)]
-
     public class EscapeActionNode : ActionNode
     {
         public override void Execute(Enemy enemy,Player player)

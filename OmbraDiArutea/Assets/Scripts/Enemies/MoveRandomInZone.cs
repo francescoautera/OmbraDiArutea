@@ -2,7 +2,6 @@
 
 namespace OmbreDiAretua
 {
-    [CreateAssetMenu(menuName = "Data/ActionNode/MoveInRandom", fileName = "MoveRandomInZone", order = 0)]
     public class MoveRandomInZone : ActionNode
     {
 

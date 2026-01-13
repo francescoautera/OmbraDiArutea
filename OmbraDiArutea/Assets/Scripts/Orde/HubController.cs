@@ -11,6 +11,8 @@ namespace OmbreDiAretua
         private IEnumerator Start()
         {
             yield return new WaitForSeconds(0.3f);
+            var playerShooter = FindObjectOfType<SpellManager>();
+            playerShooter.ResetAllLevels();
             var levelManager = FindFirstObjectByType<LevelManager>();
             foreach (var values in levelManager.isCompleted.Values)
             {

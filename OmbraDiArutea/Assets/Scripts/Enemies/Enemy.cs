@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace OmbreDiAretua
 {
@@ -14,6 +15,8 @@ namespace OmbreDiAretua
         public int damage;
         public int health;
         public int speedMovement;
+        public int dashMovement;
+        public Vector2 minMaxMovement = new Vector2(3,6);
         private int remainHealth;
         [SerializeField] private EnemyViewer _enemyViewer;
         [SerializeField] private EnemyBrain _enemyBrain;
@@ -24,8 +27,10 @@ namespace OmbreDiAretua
         [SerializeField] string death;
         [SerializeField] string movement;
         [SerializeField] string hit;
+        [SerializeField] private bool initOnStart = true;
         
         [SerializeField] bool isInWaitMode;
+        
         private float waitTime;
         [Header("BurnSection")]
         [SerializeField] bool isBurned;
@@ -41,6 +46,7 @@ namespace OmbreDiAretua
         private IEnumerator Start()
         {
             GameGlobalEvents.OnPlayerDeath += OnPlayerDeath;
+            speedMovement = (int)Random.Range(minMaxMovement.x, minMaxMovement.y);
             yield return new WaitForSeconds(0.3f);
             Init();
         }
@@ -193,4 +199,5 @@ namespace OmbreDiAretua
 
     }
     
+
 }

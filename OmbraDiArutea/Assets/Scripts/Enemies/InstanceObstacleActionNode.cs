@@ -2,7 +2,6 @@
 
 namespace OmbreDiAretua
 {
-    [CreateAssetMenu(menuName = "Data/ActionNode/InstanceObstacle", fileName = "InstanceObstacle", order = 0)]
 
     public class InstanceObstacleActionNode : ActionNode
     {

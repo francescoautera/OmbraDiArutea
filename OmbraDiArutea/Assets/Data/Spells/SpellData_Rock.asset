@@ -16,8 +16,8 @@ MonoBehaviour:
     _serializedList:
     - Key: 1
       Value:
-        cooldown: 7
-        damage: 15
+        cooldown: 3
+        damage: 7
         speed: 10
         lifetime: 1
         hasTrapassing: 0
@@ -25,8 +25,8 @@ MonoBehaviour:
         damageEffectApplied: 0
     - Key: 2
       Value:
-        cooldown: 5.25
-        damage: 17
+        cooldown: 2
+        damage: 9
         speed: 12.5
         lifetime: 1.25
         hasTrapassing: 0
@@ -34,8 +34,8 @@ MonoBehaviour:
         damageEffectApplied: 0
     - Key: 3
       Value:
-        cooldown: 3.5
-        damage: 19
+        cooldown: 1.5
+        damage: 12
         speed: 15
         lifetime: 1.5
         hasTrapassing: 0

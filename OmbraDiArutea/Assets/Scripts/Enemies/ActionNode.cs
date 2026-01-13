@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace OmbreDiAretua
 {
-    public abstract class ActionNode : ScriptableObject
+    public abstract class ActionNode : MonoBehaviour
     {
         
         protected Enemy _enemy;

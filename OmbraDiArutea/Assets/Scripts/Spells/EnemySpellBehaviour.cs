@@ -63,11 +63,11 @@ namespace OmbreDiAretua
                 return;
             }
             _soundHitted.PlayFx();
-            damage += _playerDamage;
-            player.AddHealth(-damage);
+            var spellDamage = damage + _playerDamage;
+            player.AddHealth(-spellDamage);
             var damagerShower = Instantiate(_damageShowerInstance, player.transform.position,
                 Quaternion.identity);
-            damagerShower.ShowDamage(damage);
+            damagerShower.ShowDamage(spellDamage);
         }
         
     }

@@ -9,7 +9,7 @@ namespace OmbreDiAretua
         public override void Execute(GameObject gameObject)
         {
             base.Execute(gameObject);
-            var enemy = FindFirstObjectByType<Enemy>();
+            var enemy = gameObject.GetComponent<Enemy>();
             enemy.SetSlow(timeEffect);
         }
     }

@@ -2,7 +2,6 @@
 
 namespace OmbreDiAretua
 {
-    [CreateAssetMenu(menuName = "Data/ActionNode/Shoot", fileName = "ShootActionNode", order = 0)]
     public class ShootActionNode : ActionNode
     {
 

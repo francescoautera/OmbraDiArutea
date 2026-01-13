@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e275c7631c43b0a38e9d0041857171, type: 3}
   m_Name: Spawner_DistanceConditionTransition
   m_EditorClassIdentifier: 
-  distance: 10
+  distance: 7
   checkLessThan: 0

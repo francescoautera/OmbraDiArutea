@@ -18,10 +18,12 @@ public class OrdeController : MonoBehaviour
     private List<Enemy> _currentsEnemies = new List<Enemy>();
     public Action OnCompleted;
     public Transform enemySpawn;
+    private Player _player;
     
     private void Start()
     {
         _PowerUpController = FindObjectOfType<PowerUpController>();
+        _player = FindFirstObjectByType<Player>();
     }
 
     public void ShowOrde()
@@ -44,7 +46,7 @@ public class OrdeController : MonoBehaviour
     void Spawn(Enemy prefab)
     {
         Vector2 puntoRandom = Random.insideUnitCircle * raggio;
-        Vector3 posizione = new Vector3(puntoRandom.x,puntoRandom.y,0);
+        Vector3 posizione = new Vector3(_player.transform.position.x + puntoRandom.x,_player.transform.position.y + puntoRandom.y,0);
         var instanceFeedback = Instantiate(_FeedbackSpawn, posizione, Quaternion.identity);
         
         instanceFeedback.Init(() =>
@@ -103,6 +105,11 @@ public class OrdeController : MonoBehaviour
         if (currentOrde > ordes.Count)
         {
             Debug.Log("Fine Orde");
+            var obstacles = FindObjectsOfType<ChaserObstacle>();
+            foreach (var chaserObstacle in obstacles)
+            {
+                Destroy(chaserObstacle.gameObject);
+            }
             OnCompleted?.Invoke();
             return;
         }

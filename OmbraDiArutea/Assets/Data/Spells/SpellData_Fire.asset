@@ -16,31 +16,31 @@ MonoBehaviour:
     _serializedList:
     - Key: 1
       Value:
-        cooldown: 2
-        damage: 10
+        cooldown: 3
+        damage: 5
         speed: 10
         lifetime: 2
         hasTrapassing: 0
         timeEffectApplied: 1
-        damageEffectApplied: 5
+        damageEffectApplied: 2
     - Key: 2
       Value:
-        cooldown: 1.5
-        damage: 12
+        cooldown: 2
+        damage: 9
         speed: 12.5
         lifetime: 2.5
         hasTrapassing: 0
         timeEffectApplied: 1
-        damageEffectApplied: 6
+        damageEffectApplied: 3
     - Key: 3
       Value:
-        cooldown: 1
-        damage: 15
+        cooldown: 1.5
+        damage: 12
         speed: 15
         lifetime: 3
         hasTrapassing: 0
         timeEffectApplied: 2
-        damageEffectApplied: 6
+        damageEffectApplied: 3
   nameSpell: fire
   spriteSpell: {fileID: 21300000, guid: a6bdb82905fb1ba4baa75f0e3ea5a27e, type: 3}
   currentLevel: 1

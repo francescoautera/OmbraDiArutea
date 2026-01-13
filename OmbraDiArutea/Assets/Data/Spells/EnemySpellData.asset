@@ -18,8 +18,8 @@ MonoBehaviour:
       Value:
         cooldown: 0
         damage: 10
-        speed: 5
-        lifetime: 5
+        speed: 10
+        lifetime: 3
         hasTrapassing: 0
         timeEffectApplied: 0
         damageEffectApplied: 0

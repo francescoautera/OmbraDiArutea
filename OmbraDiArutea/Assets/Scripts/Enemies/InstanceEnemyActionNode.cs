@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace OmbreDiAretua
 {
-    [CreateAssetMenu(menuName = "Data/ActionNode/InstanceEnemy", fileName = "InstanceEnemyActionNode", order = 0)]
 
     public class InstanceEnemyActionNode : ActionNode
     {

@@ -70,16 +70,15 @@ namespace OmbreDiAretua
                 return;
             }
             _soundHitted.PlayFx();
+            var damageSpell = damage + _playerDamage;
             if (ElementalTypeStrong == enemy.ElementalType)
             {
-                damage += damageAgaintsElementalTypeStrong;
-            }
-            damage += _playerDamage;
-            enemy.TakeDamage(damage);
+                damageSpell += damageAgaintsElementalTypeStrong;
+            } 
+            enemy.TakeDamage(damageSpell);
             var damagerShower = Instantiate(_damageShowerInstance, enemy.transform.position,
                 Quaternion.identity);
-            damagerShower.ShowDamage(damage);
-            Debug.Log("Danno Fatto : " + damage);      
+            damagerShower.ShowDamage(damageSpell);
         }
     }
 }

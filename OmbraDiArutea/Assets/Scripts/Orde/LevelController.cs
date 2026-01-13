@@ -19,6 +19,7 @@ namespace OmbreDiAretua
             _ordeController.ShowOrde();
             _ordeController.OnCompleted += OnCompleted;
             _player.Init();
+            FindFirstObjectByType<SpellManager>().ResetAllLevels();
         }
 
         private void OnCompleted()

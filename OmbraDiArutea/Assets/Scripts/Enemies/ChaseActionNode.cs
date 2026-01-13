@@ -2,7 +2,6 @@
 
 namespace OmbreDiAretua
 {
-    [CreateAssetMenu(menuName = "Data/ActionNode/Chase", fileName = "ChaseActionNode", order = 0)]
     public class ChaseActionNode : ActionNode
     {
         public override void Execute(Enemy enemy,Player player)
