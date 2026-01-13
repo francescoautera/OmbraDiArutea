@@ -12,7 +12,7 @@ namespace OmbreDiAretua
         {
             _enemy = enemy;
             Vector2 puntoRandom = Random.insideUnitCircle * raggio;
-            Vector3 posizione = new Vector3(enemy.transform.position.x +puntoRandom.x,enemy.transform.position.y + puntoRandom.y,0);
+            Vector3 posizione = new Vector3(player.transform.position.x +puntoRandom.x,player.transform.position.y + puntoRandom.y,0);
             finalPosition = posizione;
             enemy.SetPositionToCheck(finalPosition);
         }

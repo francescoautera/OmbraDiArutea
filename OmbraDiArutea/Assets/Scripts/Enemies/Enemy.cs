@@ -185,6 +185,8 @@ namespace OmbreDiAretua
 
         private Vector3 positionToCheck = Vector3.negativeInfinity;
 
+        public Vector3 PositionToCheck => positionToCheck;
+
         public void SetPositionToCheck(Vector3 vector3) => positionToCheck = vector3;
 
         public float GetPositionToCheckDistance()

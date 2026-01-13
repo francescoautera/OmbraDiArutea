@@ -28,6 +28,11 @@ namespace OmbreDiAretua
          _powerUpViewer.OnSelected += OnSelected;
      }
 
+     private void OnDestroy()
+     {
+         _powerUpViewer.OnSelected -= OnSelected;
+     }
+
      private void OnSelected(SpellData spellData)
      {
          FindFirstObjectByType<SpellManager>().IncreaseLevelSpell(spellData);

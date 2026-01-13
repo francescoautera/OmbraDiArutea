@@ -23,7 +23,6 @@ public class OrdeController : MonoBehaviour
     private void Start()
     {
         _PowerUpController = FindObjectOfType<PowerUpController>();
-        _player = FindFirstObjectByType<Player>();
     }
 
     public void ShowOrde()
@@ -45,6 +44,10 @@ public class OrdeController : MonoBehaviour
 
     void Spawn(Enemy prefab)
     {
+        if (!_player)
+        {
+            _player = FindFirstObjectByType<Player>();
+        }
         Vector2 puntoRandom = Random.insideUnitCircle * raggio;
         Vector3 posizione = new Vector3(_player.transform.position.x + puntoRandom.x,_player.transform.position.y + puntoRandom.y,0);
         var instanceFeedback = Instantiate(_FeedbackSpawn, posizione, Quaternion.identity);
@@ -81,10 +84,16 @@ public class OrdeController : MonoBehaviour
                 {
                     Destroy(chaserObstacle.gameObject);
                 }
+                if (!_PowerUpController)
+                {
+                    _PowerUpController = FindFirstObjectByType<PowerUpController>();
+                }
                 _PowerUpController.ShowPowerUp(currentOrde,ChangeOrde);    
             }
             return;
         }
+
+        
         _Viewer.ShowRemainEnemies(_currentsEnemies.Count);
     }
 
@@ -110,10 +119,27 @@ public class OrdeController : MonoBehaviour
             {
                 Destroy(chaserObstacle.gameObject);
             }
+
+            var en = FindObjectsOfType<Enemy>();
+            foreach (var enemy in en)
+            {
+                Destroy(enemy);
+            }
+            _currentsEnemies.Clear();
             OnCompleted?.Invoke();
             return;
         }
         ShowOrde();
+    }
+
+    private void OnDestroy()
+    {
+        foreach (var en in _currentsEnemies)
+        {
+            en.OnDeath -= OnDeath;
+        }
+        
+        _currentsEnemies.Clear();
     }
 
     public void AddEnemy(Enemy enemy)

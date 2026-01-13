@@ -1,15 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace OmbreDiAretua
 {
     public class ShowFeedbackDashActionNode : ActionNode
     {
-        private float timerShow = 2f;
+        public float timerShow = 2f;
         public GameObject feedbackDash;
         
         
         public override void Execute(Enemy enemy, Player player)
         {
+            enemy.SetPositionToCheck(player.transform.position);
             // Direzione A -> B
             Vector2 dir = player.transform.position - enemy.transform.position;
             // Distanza
