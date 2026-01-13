@@ -62,6 +62,11 @@ namespace OmbreDiAretua
             {
                 return;
             }
+
+            if (player.IsInvincibily)
+            {
+                return;
+            }
             _soundHitted.PlayFx();
             var spellDamage = damage + _playerDamage;
             player.AddHealth(-spellDamage);

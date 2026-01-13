@@ -42,7 +42,7 @@ namespace OmbreDiAretua
         private void OnTriggerEnter2D(Collider2D other)
         {
             var player = other.gameObject.GetComponent<Player>();
-            if (player)
+            if (player && !player.IsInvincibily)
             {
                 var showerDamage = Instantiate(_damageShower, player.transform.position, Quaternion.identity);
                 showerDamage.ShowDamage(damage);

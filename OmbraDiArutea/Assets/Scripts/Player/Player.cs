@@ -21,6 +21,8 @@ namespace OmbreDiAretua
         [Header("Animator")] [SerializeField] Animator _animator;
         [SerializeField] string animatorDeath;
 
+        public bool IsInvincibily => isInvincibily;
+
         private void Start()
         {
 

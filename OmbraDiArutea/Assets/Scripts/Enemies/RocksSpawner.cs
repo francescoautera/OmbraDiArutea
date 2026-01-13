@@ -46,7 +46,10 @@ namespace OmbreDiAretua
             {
                 Player enemy = hit.GetComponent<Player>();
                 if (!enemy) continue;
-
+                if (enemy.IsInvincibily)
+                {
+                    return;
+                }
                 int finalDamage = damage;
                 enemy.AddHealth(-finalDamage);
 

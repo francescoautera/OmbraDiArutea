@@ -91,7 +91,7 @@ namespace OmbreDiAretua
             _animator.SetBool(hit,false);
             _animator.SetBool(takeDamage,true);
 
-            if (remainHealth < 0)
+            if (remainHealth <= 0)
             {
                 _collider2D.enabled = false;
                 _animator.SetBool(death,true);
