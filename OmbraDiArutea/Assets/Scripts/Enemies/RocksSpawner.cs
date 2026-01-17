@@ -51,7 +51,7 @@ namespace OmbreDiAretua
                     return;
                 }
                 int finalDamage = damage;
-                enemy.AddHealth(-finalDamage);
+                enemy.TakeDamage(finalDamage);
 
                 var damageShower = Instantiate(
                     _damageShower,

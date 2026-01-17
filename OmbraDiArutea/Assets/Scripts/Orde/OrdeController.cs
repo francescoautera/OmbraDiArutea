@@ -55,6 +55,7 @@ public class OrdeController : MonoBehaviour
         instanceFeedback.Init(() =>
         {
             var enemy = Instantiate(prefab, posizione, Quaternion.identity);
+            enemy.Init();
             enemy.transform.SetParent(enemySpawn);
             enemy.OnDeath += OnDeath;
             _currentsEnemies.Add(enemy);

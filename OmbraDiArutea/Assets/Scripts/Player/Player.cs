@@ -129,11 +129,17 @@ namespace OmbreDiAretua
                 return;
             }
             var enemy = other.GetComponent<Enemy>();
-            var damage = Mathf.Clamp(enemy.damage - _playerData.defence,0,_playerData.health);
-            AddHealth(-damage);
+            TakeDamage(enemy.damage);
             StartCoroutine(InvincibilyCor());
         }
     }
+
+    public void TakeDamage(int enemyDamage)
+    {
+        var damage = Mathf.Clamp(enemyDamage - _playerData.defence,0,_playerData.health);
+        AddHealth(-damage);
+    }
+
     private IEnumerator InvincibilyCor()
     {
         float t = 0f;

@@ -48,8 +48,8 @@ namespace OmbreDiAretua
             GameGlobalEvents.OnPlayerDeath += OnPlayerDeath;
             speedMovement = (int)Random.Range(minMaxMovement.x, minMaxMovement.y);
             yield return new WaitForSeconds(0.3f);
-            Init();
         }
+        
 
         private void OnPlayerDeath()
         {

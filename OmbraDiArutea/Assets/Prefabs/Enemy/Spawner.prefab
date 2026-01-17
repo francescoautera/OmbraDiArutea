@@ -194,7 +194,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.64}
   m_SizeDelta: {x: 507.50006, y: 285}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3485884433243647115
@@ -367,7 +367,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: -1549095195, guid: ec821e4e0fb22184697fa176783a1b45, type: 3}
+  m_Sprite: {fileID: 1436064053, guid: 53bb05a639519d64b93e471732be5c8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -623,6 +623,7 @@ MonoBehaviour:
   damage: 0
   health: 30
   speedMovement: 2
+  dashMovement: 0
   minMaxMovement: {x: 3, y: 6}
   _enemyViewer: {fileID: 390430572968769388}
   _enemyBrain: {fileID: 7992495492338222672}
@@ -632,6 +633,7 @@ MonoBehaviour:
   death: Death
   movement: Movement
   hit: Hit
+  initOnStart: 1
   isInWaitMode: 0
   isBurned: 0
   isSlowing: 0

@@ -69,7 +69,7 @@ namespace OmbreDiAretua
             }
             _soundHitted.PlayFx();
             var spellDamage = damage + _playerDamage;
-            player.AddHealth(-spellDamage);
+            player.TakeDamage(spellDamage);
             var damagerShower = Instantiate(_damageShowerInstance, player.transform.position,
                 Quaternion.identity);
             damagerShower.ShowDamage(spellDamage);

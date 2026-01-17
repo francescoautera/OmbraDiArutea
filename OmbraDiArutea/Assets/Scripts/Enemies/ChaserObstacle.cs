@@ -45,8 +45,8 @@ namespace OmbreDiAretua
             if (player && !player.IsInvincibily)
             {
                 var showerDamage = Instantiate(_damageShower, player.transform.position, Quaternion.identity);
+                player.TakeDamage(damage);
                 showerDamage.ShowDamage(damage);
-                player.AddHealth(-damage);
                 Destroy(gameObject);
             }
         }
