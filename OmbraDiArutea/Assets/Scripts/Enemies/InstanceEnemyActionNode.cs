@@ -41,7 +41,10 @@ namespace OmbreDiAretua
             {
                 var enemy = Instantiate(prefab, posizione, Quaternion.identity);
                 enemy.Init();
-                _ordeController.AddEnemy(enemy);
+                if (_ordeController)
+                {
+                    _ordeController.AddEnemy(enemy);
+                }
             });
         }
         

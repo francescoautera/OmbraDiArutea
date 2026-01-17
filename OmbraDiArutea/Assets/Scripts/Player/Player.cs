@@ -34,8 +34,9 @@ namespace OmbreDiAretua
 
         public void Init()
         {
-            foreach (var playerMechanic in _playerMechanicsList)
+            for (var index = 0; index < _playerMechanicsList.Count; index++)
             {
+                var playerMechanic = _playerMechanicsList[index];
                 playerMechanic.Init(_playerData);
             }
 
@@ -44,38 +45,43 @@ namespace OmbreDiAretua
 
         public void StopAll()
         {
-            foreach (var playerMechanic in _playerMechanicsList)
+            for (var index = 0; index < _playerMechanicsList.Count; index++)
             {
+                var playerMechanic = _playerMechanicsList[index];
                 playerMechanic.BlockMechanic();
             }
         }
 
         public void HideAllUI()
         {
-            foreach (var playerMechanic in _playerMechanicsList)
+            for (var index = 0; index < _playerMechanicsList.Count; index++)
             {
+                var playerMechanic = _playerMechanicsList[index];
                 playerMechanic.HideAllUI();
             }
+
             _playerUi.HideAll();
         }
 
         public void ShowAllUI()
         {
-            foreach (var playerMechanic in _playerMechanicsList)
+            for (var index = 0; index < _playerMechanicsList.Count; index++)
             {
+                var playerMechanic = _playerMechanicsList[index];
                 playerMechanic.ShowAllUI();
             }
-            
+
             _playerUi.ShowAll();
         }
 
         public void RestartAll()
-    {
-        foreach (var playerMechanic in _playerMechanicsList)
         {
-            playerMechanic.UnblockMechanic();
+            for (var index = 0; index < _playerMechanicsList.Count; index++)
+            {
+                var playerMechanic = _playerMechanicsList[index];
+                playerMechanic.UnblockMechanic();
+            }
         }
-    }
 
     [Button]
     private void ChangeHealth(int health)

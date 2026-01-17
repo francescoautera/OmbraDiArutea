@@ -20,6 +20,10 @@ namespace OmbreDiAretua
         public void RequestStartDialogue()
         {
             Debug.Log("start");
+            if (!_dialogueManager)
+            { 
+                _dialogueManager = FindObjectOfType<DialogueManager>();
+            }
             _dialogueManager.StartDialogue(this);
         }
 

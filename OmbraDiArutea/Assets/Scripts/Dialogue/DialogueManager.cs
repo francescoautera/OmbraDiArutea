@@ -9,13 +9,13 @@ namespace OmbreDiAretua
       public static Action OnEndDialogue;
       private DialogueData _currentDialogue;
       [SerializeField] DialogueViewer _viewer;
-      [SerializeField] private DialogueData _startingDialogue;
       
 
      
 
       public void StartDialogue(DialogueData data)
       {
+         data.OnStartDialogue.RemoveAllListeners();
          data.OnStartDialogue?.Invoke();
          _currentDialogue = data;
          OnStartDialogue?.Invoke();
@@ -67,8 +67,7 @@ namespace OmbreDiAretua
 
       private void EndDialogue()
       {
-         _viewer.Close();
-         _currentDialogue?.OnEndDialogue.Invoke();
+         _viewer.Close(); 
          _currentDialogue?.OnEndDialogue.RemoveAllListeners();
          _currentDialogue = null;
          OnEndDialogue?.Invoke();

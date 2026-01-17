@@ -19,6 +19,8 @@ namespace OmbreDiAretua
                 levelController.Setup(isCompleted[scene]);
             });
         }
+        
+        
 
         public void Reload(string scene)
         {
@@ -34,6 +36,8 @@ namespace OmbreDiAretua
         {
             FindObjectOfType<SceneLoader>().LoadScene(hubScene,scene,null);
         }
+        
+        
 
         private void OnCompleted(string obj)
         {

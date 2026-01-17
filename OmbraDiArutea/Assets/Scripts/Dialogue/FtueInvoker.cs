@@ -8,7 +8,7 @@ namespace OmbreDiAretua
 
         public void Execute()
         {
-            var ftueController =FindFirstObjectByType<FtueController>();
+            var ftueController =FindObjectOfType<FtueController>();
             ftueController.ShowEvent(invokeFtue);
         }
     }
