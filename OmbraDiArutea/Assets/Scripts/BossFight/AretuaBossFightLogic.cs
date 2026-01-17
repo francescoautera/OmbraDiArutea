@@ -14,6 +14,7 @@ public class AretuaBossFightLogic : MonoBehaviour
     [SerializeField] EndingPanel _endingPanel;
     [SerializeField] private MusicSceneController startMusicFirstPhase;
     private bool canCheckLife;
+    private bool block;
     [Header("SecondPhase")] 
     [SerializeField] bool canInstance;
     [SerializeField] GameObject instanceObstacle;
@@ -24,6 +25,11 @@ public class AretuaBossFightLogic : MonoBehaviour
 
     private void Update()
     {
+        if (block)
+        {
+            return;
+        }
+        
         if (!canInstance)
         {
             if (canCheckLife)
@@ -54,6 +60,7 @@ public class AretuaBossFightLogic : MonoBehaviour
         _startingDialogueData.RequestStartDialogue();
         canInstance = false;
         canCheckLife = false;
+        block = false;
         _canvasGroupController.Close(null);
         _boss.OnDeath += OnDeath;
         GameGlobalEvents.OnPlayerDeath += StopBattle;
@@ -77,6 +84,7 @@ public class AretuaBossFightLogic : MonoBehaviour
 
     public void StartSecondPhase()
     {
+        
         canInstance = true;
         timerSpawn = 0f;
         startMusicSecondPhase.RequestPlayMusic();
@@ -87,14 +95,18 @@ public class AretuaBossFightLogic : MonoBehaviour
         GameGlobalEvents.OnPlayerDeath -= StopBattle;
         canInstance = false;
         timerSpawn = 0f;
+        block = true;
         _boss.Stop();
     }
 
     private void OpenEndingPanel()
     {
+        FindFirstObjectByType<Player>().StopAll();
         canInstance = false;
+        block = true;
         timerSpawn = 0f;
         startVictoryMusic.RequestPlayMusic();
+        _endingPanel.ShowWin();
     }
 
     private void CheckLife()
