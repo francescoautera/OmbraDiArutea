@@ -59,6 +59,14 @@ namespace OmbreDiAretua
             }
         }
 
+        public void Stop()
+        {
+            if (_enemyBrain)
+            {
+                _enemyBrain.Lock();
+            }
+        }
+
         public void Init()
         {
             _enemyViewer.Setup(health);
@@ -197,6 +205,11 @@ namespace OmbreDiAretua
             }
             
             return  Vector3.Distance(transform.position, positionToCheck);
+        }
+
+        public bool IsRemainPercentageLife(float lifeRemain)
+        {
+            return (remainHealth / (float)health) > lifeRemain;
         }
 
     }

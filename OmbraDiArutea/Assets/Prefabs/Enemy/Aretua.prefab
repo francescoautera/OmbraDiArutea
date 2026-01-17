@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4c0ea046de40749e93656673c0de74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerShow: 1.5
+  timerShow: 1
   feedbackDash: {fileID: 7703996535179606353, guid: 03a9418e26c5c4941ace70e332a0b5d6, type: 3}
 --- !u!1 &2512709874661983262
 GameObject:
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b50100c59d442aa87bd87c261dbc91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerWait: 6
+  timerWait: 4
 --- !u!1 &2631724006230180281
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,7 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocksToInstantiate: {fileID: 5214072780151694553, guid: b291805b3740601408f87f09911f56fc, type: 3}
   numberToInstace: 3
-  timerBetweenInstances: 2
+  timerBetweenInstances: 1.5
 --- !u!1 &3704748009209107726
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,8 +824,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.51, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4999999, y: 1.4999999, z: 1.4999999}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1662553940029960284}
   - {fileID: 4944515134395575509}
@@ -890,8 +890,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ElementalType: 4
-  damage: 10
-  health: 20
+  damage: 30
+  health: 70
   speedMovement: 4
   dashMovement: 15
   minMaxMovement: {x: 3, y: 6}
@@ -1101,7 +1101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b50100c59d442aa87bd87c261dbc91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerWait: 1.5
+  timerWait: 1
 --- !u!1 &8382123502953371461
 GameObject:
   m_ObjectHideFlags: 0

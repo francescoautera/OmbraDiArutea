@@ -21,6 +21,7 @@ namespace OmbreDiAretua
         {
             if (numberToInstace < currentInstanciated)
             {
+                currentInstanciated = 0;
                 return;
             }
 

@@ -19,13 +19,22 @@ namespace OmbreDiAretua
                 levelController.Setup(isCompleted[scene]);
             });
         }
-        
-        
+
+        public void ReturnToMenu(string sceneToUnload)
+        {
+            FindFirstObjectByType<SceneLoader>().LoadScene("MainMenu",sceneToUnload,null);
+        }
+
+
 
         public void Reload(string scene)
         {
             FindObjectOfType<SceneLoader>().LoadScene(scene,scene, () => { 
                 var levelController = FindFirstObjectByType<LevelController>();
+                if (!levelController)
+                {
+                    return;
+                }
                 levelController.OnCompletedLevel += OnCompleted;
                 levelController.Setup(isCompleted[scene]);
             });
