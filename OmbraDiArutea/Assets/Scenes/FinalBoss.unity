@@ -339,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8917020029004503762, guid: 8cc8f788eb04d5642907524c882b1ffb, type: 3}
       propertyPath: health
-      value: 5
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 8917020029004503762, guid: 8cc8f788eb04d5642907524c882b1ffb, type: 3}
       propertyPath: ElementalType
@@ -2779,7 +2779,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491369932}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -3568,7 +3568,7 @@ Transform:
   m_GameObject: {fileID: 2146812505}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.3, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

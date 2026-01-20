@@ -113,6 +113,7 @@ Transform:
   - {fileID: 916946790757443439}
   - {fileID: 467148695807649121}
   - {fileID: 329019984279177383}
+  - {fileID: 4397437145737410257}
   m_Father: {fileID: 7410747288956622810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1182733576657062973
@@ -553,6 +554,51 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!1 &4772601969182381399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4397437145737410257}
+  - component: {fileID: 2070051386383446043}
+  m_Layer: 7
+  m_Name: SpawnSpell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4397437145737410257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4772601969182381399}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7501453585551893224}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2070051386383446043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4772601969182381399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503b60aac4994bbc85276d75a417eb71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aretuaSpell: {fileID: 6302807198327858056, guid: 8d96591fd0853a0409ab92b6d498ab25, type: 3}
 --- !u!1 &5191579230620014007
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,6 +1014,10 @@ MonoBehaviour:
   - actionNode: {fileID: 9097525338896721380}
     _transitions:
     - ConditionTransition: {fileID: 11400000, guid: a1803c6eb5cd48f4ab758e7e2366ea3c, type: 2}
+      actionToArrive: {fileID: 2070051386383446043}
+  - actionNode: {fileID: 2070051386383446043}
+    _transitions:
+    - ConditionTransition: {fileID: 11400000, guid: 7ac59267c754fc844b4d9751f68795ee, type: 2}
       actionToArrive: {fileID: 3820000541036097304}
   - actionNode: {fileID: 3820000541036097304}
     _transitions:
