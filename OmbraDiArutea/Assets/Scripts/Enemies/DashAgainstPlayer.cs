@@ -4,16 +4,19 @@ namespace OmbreDiAretua
 {
     public class DashAgainstPlayer : ActionNode
     {
-       
+        [SerializeField] GameObject _activeDash;
         
         public override void Execute(Enemy enemy, Player player)
         {
             _enemy = enemy;
+            _activeDash.SetActive(true);
         }
 
         public override void Stop()
         {
             _enemy.SetPositionToCheck(Vector3.negativeInfinity);
+            _activeDash.SetActive(false);
+
         }
         
         public override void Tick(Enemy enemy, Player player)

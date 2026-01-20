@@ -26,7 +26,7 @@ namespace OmbreDiAretua
             }
 
             var rock = Instantiate(rocksToInstantiate, player.transform.position, Quaternion.identity);
-            rock.GetComponent<RocksSpawner>().ShowRockFeedback();
+            rock.GetComponent<AreaTrapSpawner>().ShowTrapFeedback();
             StartCoroutine(WaitSpawnNext());
         }
 

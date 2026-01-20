@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace OmbreDiAretua
@@ -14,7 +15,11 @@ namespace OmbreDiAretua
         [SerializeField] string moving;
         [Header("Music")] 
         [SerializeField] private SfxPlayer _soundWalking;
-        public override void Init(PlayerData playerData)
+
+        [Header("FeedbackSlow")] [SerializeField]
+        private GameObject _feedbackSlow;
+        float speedMutliplier = 1;
+         public override void Init(PlayerData playerData)
         {
             base.Init(playerData);
             canMove = true;
@@ -47,8 +52,8 @@ namespace OmbreDiAretua
                 return;
             }
             
-            var horizontal = Input.GetAxis("Horizontal") * _currentPlayer.speed * Time.deltaTime;
-            var vertical = Input.GetAxis("Vertical") * _currentPlayer.speed * Time.deltaTime;
+            var horizontal = Input.GetAxis("Horizontal") * _currentPlayer.speed* speedMutliplier * Time.deltaTime;
+            var vertical = Input.GetAxis("Vertical") * _currentPlayer.speed * speedMutliplier * Time.deltaTime;
             var ismoving = horizontal != 0 || vertical != 0;
             _animator.SetBool(moving,ismoving);
             if (horizontal != 0)
@@ -59,8 +64,27 @@ namespace OmbreDiAretua
             }
             transform.position += new Vector3(horizontal, vertical); }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private bool isSlowed = false;
+        
+        public void DebuffSlowPlayer(float timer,float speedMid)
         {
+            if (isSlowed)
+            {
+                return;   
+            }
+
+            isSlowed = true;
+            _feedbackSlow.SetActive(true);
+            speedMutliplier = speedMid;
+            StartCoroutine(DebuffSlowPlayerCor(timer));
+        }
+
+        IEnumerator DebuffSlowPlayerCor(float timer)
+        {
+            yield return new WaitForSeconds(timer);
+            isSlowed = false;
+            speedMutliplier = 1;
+            _feedbackSlow.SetActive(false);
         }
     }
 }

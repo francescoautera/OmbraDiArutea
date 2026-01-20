@@ -20,6 +20,8 @@ namespace OmbreDiAretua
         [SerializeField] private bool initAtStart;
         [Header("Animator")] [SerializeField] Animator _animator;
         [SerializeField] string animatorDeath;
+        [Header("feedback")]
+        [SerializeField] private GameObject _feedback;
 
         public bool IsInvincibily => isInvincibily;
 
@@ -165,7 +167,32 @@ namespace OmbreDiAretua
         isInvincibily = false;
         _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
     }
-}
+
+    private bool isInStatus = false;
+    public void ApplyStatus(float timerSlow, float tickDamage)
+    {
+        if (isInStatus)
+        {
+            return;
+        }
+        _feedback.SetActive(true);
+        isInStatus = true;
+        StartCoroutine(StatusCor(timerSlow, tickDamage));
+    }
+
+    IEnumerator StatusCor(float timerSlow,float tickDamage)
+    {
+        float t = 0f;
+        while ( t< timerSlow)
+        {
+            yield return new WaitForSeconds(1f);
+            t += 1;
+            TakeDamage((int)tickDamage);
+        }
+        _feedback.SetActive(false);
+        isInStatus = false;
+    }
+    }
 
 [Serializable]
 public class PlayerData

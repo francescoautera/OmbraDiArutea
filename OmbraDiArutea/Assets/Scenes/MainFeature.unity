@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -831,6 +831,12 @@ MonoBehaviour:
   isCompleted:
     _serializedList:
     - Key: NatureBiome
+      Value: 0
+    - Key: SandBiome
+      Value: 0
+    - Key: MarshBiome
+      Value: 0
+    - Key: FireBiome
       Value: 0
   hubScene: hub
 --- !u!1 &1716771405

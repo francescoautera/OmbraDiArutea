@@ -38,6 +38,12 @@ public class OrdeController : MonoBehaviour
             Spawn(enemy);
         }
         _Viewer.ShowRemainEnemies(list.Count);
+        var spellTrap = FindObjectOfType<SpawnTrapBehaviour>();
+        if (spellTrap)
+        {
+            spellTrap.InitSpawn();
+        }
+
     }
     
     public float raggio = 5f;
@@ -70,6 +76,11 @@ public class OrdeController : MonoBehaviour
         if (_currentsEnemies.Count <= 0)
         {
             _Viewer.CloseShowRemainEnemies();
+            var spellTrap = FindObjectOfType<SpawnTrapBehaviour>();
+            if (spellTrap)
+            {
+                spellTrap.StopSpawn();
+            }
             StartCoroutine(Wait());
             IEnumerator Wait()
             {

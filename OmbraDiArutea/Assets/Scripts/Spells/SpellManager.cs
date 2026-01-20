@@ -15,7 +15,12 @@ namespace OmbreDiAretua
         private SpellContainerData _currentSpell;
         [Header("Spell")] 
         [SerializeField] private SfxPlayer _shoot;
-        [SerializeField] private SfxPlayer reloading;    
+        [SerializeField] private SfxPlayer reloading;
+
+        [Header("feedback")] 
+        [SerializeField] GameObject _feedback;
+        private int reduceDamage = 0;
+        
         public override void Init(PlayerData playerData)
         {
             base.Init(playerData);
@@ -85,6 +90,7 @@ namespace OmbreDiAretua
             mousePos.z = -Camera.main.transform.position.z; // distanza camera → mondo
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mousePos);
             var spellStat = _currentSpell.SpellData.GetSpellStat();
+            spellStat.damage -= reduceDamage;
             _currentSpell.SpellController.SetInCooldown(spellStat);
             var instanceSpell = Instantiate(_currentSpell.SpellData.instanceSpell,ShootTransform.transform.position,Quaternion.identity);
             instanceSpell.GetComponent<SpellBehaviour>().Initialize(spellStat,mouseWorldPos,_currentPlayer.force);
@@ -143,6 +149,31 @@ namespace OmbreDiAretua
                 Shoot();
             }
         }
+
+        private bool isReduced = false;
+        
+        public void ReduceDamage(float timer, int reduce)
+        {
+            if (isReduced)
+            {
+                return;
+            }
+
+            isReduced = true;
+            reduceDamage = reduce;
+            _feedback.SetActive(true);
+            StartCoroutine(ReduceDamageCor(timer));
+        }
+
+
+        IEnumerator ReduceDamageCor(float timer)
+        {
+            yield return new WaitForSeconds(timer);
+            reduceDamage = 0;
+            isReduced = false;
+            _feedback.SetActive(false);
+        }
     }
+    
     
 }

@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ReduceVelocity
+  m_Controller: {fileID: 9100000, guid: 7c3668cf6642dd145ba6f60bba82cbef, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 0b30204e5309988419876d525e5e6343, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8f669b3b8c81e0f45ae772c83185607a, type: 2}
