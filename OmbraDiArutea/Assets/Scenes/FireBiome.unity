@@ -90402,7 +90402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d20c1aba6bfa2e4d8a44f10599a3ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: NatureBiome
+  sceneName: FireBiome
   _canvasGroupController: {fileID: 1928003809}
   _animator: {fileID: 1928003816}
   _winSfx: {fileID: 1928003818}
