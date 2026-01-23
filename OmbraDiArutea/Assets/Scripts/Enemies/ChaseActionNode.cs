@@ -29,7 +29,6 @@ namespace OmbreDiAretua
             {
                 return;
             }
-            Debug.Log("Chasing");
             Vector3 dir = (player.transform.position - enemy.transform.position).normalized;
             enemy.transform.position += dir * (enemy.speedMovement * Time.deltaTime);
         }

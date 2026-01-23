@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial_ChangeSpell 1
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: 'Hai 5 magie a disposizione: base,fuoco,acqua,terra,aria'
+  line: 'Hai 5 magie a disposizione: base, fuoco, acqua, terra, aria.'
   nextLines:
   - {fileID: 11400000, guid: f21c6dee12d731c4a9d701f2e92edcc4, type: 2}
   isMultichoice: 0

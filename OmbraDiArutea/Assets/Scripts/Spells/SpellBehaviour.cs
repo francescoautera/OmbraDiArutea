@@ -71,14 +71,16 @@ namespace OmbreDiAretua
             }
             _soundHitted.PlayFx();
             var damageSpell = damage + _playerDamage;
+            bool isSuperEffective = false;
             if (ElementalTypeStrong == enemy.ElementalType)
             {
                 damageSpell += damageAgaintsElementalTypeStrong;
+                isSuperEffective = true;
             } 
             enemy.TakeDamage(damageSpell);
             var damagerShower = Instantiate(_damageShowerInstance, enemy.transform.position,
                 Quaternion.identity);
-            damagerShower.ShowDamage(damageSpell);
+            damagerShower.ShowDamage(damageSpell,isSuperEffective);
         }
     }
 }

@@ -14,9 +14,14 @@ namespace OmbreDiAretua
             var playerShooter = FindObjectOfType<SpellManager>();
             playerShooter.ResetAllLevels();
             var levelManager = FindFirstObjectByType<LevelManager>();
-            foreach (var values in levelManager.isCompleted.Values)
+            foreach (var values in levelManager.isCompleted)
             {
-                if (!values)
+                if (values.Key == "FinalBoss")
+                {
+                    continue;
+                }
+                
+                if (!values.Value)
                 {
                     yield break;
                 }

@@ -15,14 +15,21 @@ namespace OmbreDiAretua
         {
             FindObjectOfType<SceneLoader>().LoadScene(scene,hubScene, () => { 
                 var levelController = FindFirstObjectByType<LevelController>();
-                levelController.OnCompletedLevel += OnCompleted;
-                levelController.Setup(isCompleted[scene]);
+                if (levelController)
+                {
+                    levelController.OnCompletedLevel += OnCompleted;
+                    levelController.Setup(isCompleted[scene]);
+                }
             });
         }
 
         public void ReturnToMenu(string sceneToUnload)
         {
             FindFirstObjectByType<SceneLoader>().LoadScene("MainMenu",sceneToUnload,null);
+            foreach (var value in isCompleted.Keys)
+            {
+                isCompleted[value] = false;
+            }
         }
 
 

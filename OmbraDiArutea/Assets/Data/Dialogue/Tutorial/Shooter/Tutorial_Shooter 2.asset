@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial_Shooter 2
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: Loro ti sparano magie da una certa distanza; cerca di avvicinarti con loro
+  line: Loro ti sparano magie da una certa distanza; cerca di avvicinarti con loro.
   nextLines:
   - {fileID: 11400000, guid: 1713bda915192774088e2ce9d9fc946a, type: 2}
   isMultichoice: 0

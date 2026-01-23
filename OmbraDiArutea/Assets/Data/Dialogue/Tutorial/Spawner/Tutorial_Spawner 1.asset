@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial_Spawner 1
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: "Lui \xE8 un genio..."
+  line: Lui e' un genio...
   nextLines:
   - {fileID: 11400000, guid: 05c73c37b787ee44bb9193196e53123f, type: 2}
   isMultichoice: 0

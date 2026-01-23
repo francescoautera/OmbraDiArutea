@@ -11,6 +11,7 @@ namespace OmbreDiAretua
         [SerializeField] FeedbackSpawn _feedbackSpawn;
         [SerializeField] private float raggio;
         [SerializeField] private bool destroyAllEnemiesAfterDeath = false;
+        [SerializeField] private float timerChang = 1.2f;
         private Enemy _currentEnemyInstance;
     
         public override void InitTutorialStep()
@@ -53,7 +54,7 @@ namespace OmbreDiAretua
 
         IEnumerator Wait()
         {
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(timerChang);
             OnEndTutorialStep?.Invoke();
         }
     

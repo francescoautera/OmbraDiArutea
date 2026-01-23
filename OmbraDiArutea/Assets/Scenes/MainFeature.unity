@@ -832,6 +832,8 @@ MonoBehaviour:
     _serializedList:
     - Key: NatureBiome
       Value: 0
+    - Key: FinalBoss
+      Value: 0
     - Key: SandBiome
       Value: 0
     - Key: MarshBiome

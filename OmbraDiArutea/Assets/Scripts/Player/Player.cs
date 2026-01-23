@@ -142,10 +142,11 @@ namespace OmbreDiAretua
         }
     }
 
-    public void TakeDamage(int enemyDamage)
+    public int TakeDamage(int enemyDamage)
     {
         var damage = Mathf.Clamp(enemyDamage - _playerData.defence,0,_playerData.health);
         AddHealth(-damage);
+        return damage;
     }
 
     private IEnumerator InvincibilyCor()
@@ -192,6 +193,8 @@ namespace OmbreDiAretua
         _feedback.SetActive(false);
         isInStatus = false;
     }
+
+    public int GetDefence() => _playerData.defence;
     }
 
 [Serializable]

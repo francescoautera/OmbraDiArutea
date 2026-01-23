@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial_Chaser 1
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: "Lui \xE8 un goblin.."
+  line: Lui e' un goblin..
   nextLines:
   - {fileID: 11400000, guid: 75ab454d5e0c6a54b97956fd62a0e280, type: 2}
   isMultichoice: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial_Shooter 1
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: "Lui \xE8 un elementare..."
+  line: Lui e' un elementare...
   nextLines:
   - {fileID: 11400000, guid: 7ffecd80bd3b49e4fab3425e55211371, type: 2}
   isMultichoice: 0

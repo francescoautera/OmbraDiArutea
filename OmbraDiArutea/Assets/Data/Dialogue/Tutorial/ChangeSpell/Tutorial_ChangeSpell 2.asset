@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial_ChangeSpell 2
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: "Ogni magia \xE8 forte contro determinati tipi di nemici e ha effetti diversi"
+  line: Ogni magia e' forte contro determinati tipi di nemici e ha effetti diversi.
   nextLines:
   - {fileID: 11400000, guid: 6709c780f1616f74cb182df2d1f38019, type: 2}
   isMultichoice: 0

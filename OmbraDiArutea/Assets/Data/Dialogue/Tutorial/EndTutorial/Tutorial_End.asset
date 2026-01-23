@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tutorial_End
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: Bene, adesso sei pronto. Vai eroe
+  line: Bene, adesso sei pronto. Vai eroe!
   nextLines: []
   isMultichoice: 0

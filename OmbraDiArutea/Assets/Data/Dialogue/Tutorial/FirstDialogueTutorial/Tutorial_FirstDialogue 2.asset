@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tutorial_FirstDialogue 2
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: Per muoverti utilizza i tasti W,A,S,D
+  line: Per muoverti utilizza i tasti W, A, S, D.
   nextLines: []
   isMultichoice: 0

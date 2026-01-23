@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial_Chaser 3
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: "Sono di tipo terra, perci\xF2 soffrono l'acqua"
+  line: Sono di tipo terra, percio' soffrono l'acqua.
   nextLines:
   - {fileID: 11400000, guid: 5f69c34e57cea664fafd78ede82f0f7f, type: 2}
   isMultichoice: 0

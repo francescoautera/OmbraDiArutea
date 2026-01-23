@@ -7,6 +7,7 @@ namespace OmbreDiAretua
     {
         public DialogueData DialogueData;
         private bool RequestShoot;
+        public float timerWaitChange = 1.2f;
         [SerializeField] FtueInvoker _ftueInvoker;
     
         public override void InitTutorialStep()
@@ -37,7 +38,7 @@ namespace OmbreDiAretua
 
         IEnumerator Wait()
         {
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(timerWaitChange);
             OnEndTutorialStep?.Invoke();
         }
     

@@ -6,6 +6,7 @@ namespace OmbreDiAretua
     public class ChangeSpellTutorialStep : TutorialStep
     {
         public DialogueData DialogueData;
+        public float timerWaitChange;
         private bool RequestShoot;
         [SerializeField] FtueInvoker _ftueInvoker;
     
@@ -40,7 +41,7 @@ namespace OmbreDiAretua
 
         IEnumerator Wait()
         {
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(timerWaitChange);
             OnEndTutorialStep?.Invoke();
         }
     

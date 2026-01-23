@@ -45,10 +45,11 @@ namespace OmbreDiAretua
                 if (!enemy) continue;
 
                 int finalDamage = _spellDamage + _playerDamage;
-
+                bool isSuperEffective = false;
                 if (_elementalType == enemy.ElementalType)
                 {
                     finalDamage += damageAgaintsElementalTypeStrong;
+                    isSuperEffective = true;
                 }
 
                 enemy.TakeDamage(finalDamage);
@@ -58,7 +59,7 @@ namespace OmbreDiAretua
                     enemy.transform.position,
                     Quaternion.identity
                 );
-                damageShower.ShowDamage(finalDamage);
+                damageShower.ShowDamage(finalDamage,isSuperEffective);
             }
         }
 

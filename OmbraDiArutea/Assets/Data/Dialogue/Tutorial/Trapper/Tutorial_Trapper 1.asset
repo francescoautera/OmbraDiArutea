@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial_Trapper 1
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: "Lui \xE8 un arpia..."
+  line: Lui e' un arpia...
   nextLines:
   - {fileID: 11400000, guid: 5c6637caa85b8724e81608e42a946d25, type: 2}
   isMultichoice: 0

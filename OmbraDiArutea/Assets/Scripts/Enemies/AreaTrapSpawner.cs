@@ -51,14 +51,12 @@ namespace OmbreDiAretua
                     return;
                 }
                 int finalDamage = damage;
-                enemy.TakeDamage(finalDamage);
-
                 var damageShower = Instantiate(
                     _damageShower,
                     enemy.transform.position,
                     Quaternion.identity
                 );
-                damageShower.ShowDamage(finalDamage);
+                damageShower.ShowDamage( enemy.TakeDamage(finalDamage));
             }
         }
 

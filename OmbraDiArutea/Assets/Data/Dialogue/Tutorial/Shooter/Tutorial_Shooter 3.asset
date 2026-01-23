@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial_Shooter 3
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: Sono di tipo acqua, soffrono il tipo vento
+  line: Sono di tipo acqua, soffrono il tipo vento.
   nextLines:
   - {fileID: 11400000, guid: 8a3263cfe4eef06438cec914dffd17e9, type: 2}
   isMultichoice: 0

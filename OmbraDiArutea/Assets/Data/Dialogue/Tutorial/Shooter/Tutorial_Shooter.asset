@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial_Shooter
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: passiamo al secondo nemico
+  line: Passiamo al secondo nemico.
   nextLines:
   - {fileID: 11400000, guid: bb895e8b35967f14ea9021a7fad1df74, type: 2}
   isMultichoice: 0

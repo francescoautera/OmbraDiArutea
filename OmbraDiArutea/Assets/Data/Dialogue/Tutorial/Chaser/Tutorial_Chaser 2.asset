@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial_Chaser 2
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: Loro ti inseguono fino a quando sono in forze
+  line: Loro ti inseguono fino a quando sono in forze.
   nextLines:
   - {fileID: 11400000, guid: 4d49e7571ce8d1342ad30285219e6b78, type: 2}
   isMultichoice: 0

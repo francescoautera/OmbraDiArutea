@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tutorial_Shoot 1
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: per sparare usa il tasto sinistro del mouse
+  line: Per sparare usa il tasto sinistro del mouse.
   nextLines: []
   isMultichoice: 0

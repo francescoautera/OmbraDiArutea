@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tutorial_ChangeSpell 5
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: Per cambiare magia utilizza i tasti 1-5 della tastiera
+  line: Per cambiare magia utilizza i tasti 1-5 della tastiera.
   nextLines: []
   isMultichoice: 0
