@@ -18,7 +18,7 @@ MonoBehaviour:
       Value:
         cooldown: 5
         damage: 5
-        speed: 6
+        speed: 10
         lifetime: 8
         hasTrapassing: 0
         timeEffectApplied: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
       Value:
         cooldown: 4
         damage: 7
-        speed: 7.5
+        speed: 10
         lifetime: 10
         hasTrapassing: 0
         timeEffectApplied: 0
@@ -36,7 +36,7 @@ MonoBehaviour:
       Value:
         cooldown: 3
         damage: 9
-        speed: 9
+        speed: 10
         lifetime: 12
         hasTrapassing: 0
         timeEffectApplied: 0

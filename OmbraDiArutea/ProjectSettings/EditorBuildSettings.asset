@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SandBiome.unity
     guid: 547b536d534d4c2438ba5c46b0d30102
+  - enabled: 1
+    path: Assets/Scenes/MarshBiome.unity
+    guid: 00b3388638cd6fd44ae31ba08b9d25f8
   m_configObjects: {}

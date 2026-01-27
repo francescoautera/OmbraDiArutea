@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial_Spawner 3
   m_EditorClassIdentifier: 
   currentSpeaker: {fileID: 11400000, guid: 5acd464a1e573ab4d80771519ca194ba, type: 2}
-  line: "Sono ti tipo fuoco, perci\xF2 soffrono il tipo terra"
+  line: Sono di tipo fuoco, percio' soffrono il tipo terra
   nextLines:
   - {fileID: 11400000, guid: 973c06c1f4ec66648860819b19b7dba8, type: 2}
   isMultichoice: 0

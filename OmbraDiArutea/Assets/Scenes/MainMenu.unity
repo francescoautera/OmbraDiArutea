@@ -3230,6 +3230,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 99358fcd5bdcbc64c880a123cfa75d78, type: 3}
     timerFade: 0
     volume: 0.5
+  playMusicOnStart: 1
 --- !u!1 &1281783339
 GameObject:
   m_ObjectHideFlags: 0

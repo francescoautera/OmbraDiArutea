@@ -18,7 +18,7 @@ MonoBehaviour:
       Value:
         cooldown: 1.5
         damage: 5
-        speed: 6
+        speed: 10
         lifetime: 2
         hasTrapassing: 0
         timeEffectApplied: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
       Value:
         cooldown: 1
         damage: 7
-        speed: 7.5
+        speed: 10
         lifetime: 2.5
         hasTrapassing: 0
         timeEffectApplied: 0
@@ -36,12 +36,12 @@ MonoBehaviour:
       Value:
         cooldown: 0.8
         damage: 9
-        speed: 9
+        speed: 10
         lifetime: 3
         hasTrapassing: 0
         timeEffectApplied: 0
         damageEffectApplied: 0
   nameSpell: base
   spriteSpell: {fileID: 21300000, guid: d56c9ab5c01165040a8523395f46beb7, type: 3}
-  currentLevel: 1
+  currentLevel: 2
   instanceSpell: {fileID: 262019782004240274, guid: 561433442b0fd824b8161d0ae8598bfa, type: 3}
